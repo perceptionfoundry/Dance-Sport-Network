@@ -11,7 +11,7 @@ import SwiftUI
 struct Dance_Sport_NetworkApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignInView()
         }
     }
 }
