@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */; };
+		F2783B5C26DC8B5100ABA0A7 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5B26DC8B5100ABA0A7 /* Template.swift */; };
+		F2783B5E26DC8B5100ABA0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2783B5D26DC8B5100ABA0A7 /* Assets.xcassets */; };
+		F2783B6126DC8B5100ABA0A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2783B6026DC8B5100ABA0A7 /* Preview Assets.xcassets */; };
+		F2783B6C26DC8B5200ABA0A7 /* Dance_Sport_NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B6B26DC8B5200ABA0A7 /* Dance_Sport_NetworkTests.swift */; };
+		F2783B7726DC8B5200ABA0A7 /* Dance_Sport_NetworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B7626DC8B5200ABA0A7 /* Dance_Sport_NetworkUITests.swift */; };
+		F2783B8526DC915900ABA0A7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8426DC915900ABA0A7 /* Launch Screen.storyboard */; };
+		F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B8726DC950700ABA0A7 /* SignUpView.swift */; };
+		F2783B9826DC988600ABA0A7 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8A26DC988600ABA0A7 /* Rubik-Regular.ttf */; };
+		F2783B9926DC988600ABA0A7 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8B26DC988600ABA0A7 /* Rubik-Light.ttf */; };
+		F2783B9A26DC988600ABA0A7 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8C26DC988600ABA0A7 /* Rubik-ExtraBoldItalic.ttf */; };
+		F2783B9B26DC988600ABA0A7 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8D26DC988600ABA0A7 /* Rubik-LightItalic.ttf */; };
+		F2783B9C26DC988600ABA0A7 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8E26DC988600ABA0A7 /* Rubik-SemiBoldItalic.ttf */; };
+		F2783B9D26DC988600ABA0A7 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B8F26DC988600ABA0A7 /* Rubik-Medium.ttf */; };
+		F2783B9E26DC988600ABA0A7 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9026DC988600ABA0A7 /* Rubik-Bold.ttf */; };
+		F2783B9F26DC988700ABA0A7 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9126DC988600ABA0A7 /* Rubik-BlackItalic.ttf */; };
+		F2783BA026DC988700ABA0A7 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9226DC988600ABA0A7 /* Rubik-Black.ttf */; };
+		F2783BA126DC988700ABA0A7 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9326DC988600ABA0A7 /* Rubik-MediumItalic.ttf */; };
+		F2783BA226DC988700ABA0A7 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9426DC988600ABA0A7 /* Rubik-Italic.ttf */; };
+		F2783BA326DC988700ABA0A7 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9526DC988600ABA0A7 /* Rubik-ExtraBold.ttf */; };
+		F2783BA426DC988700ABA0A7 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9626DC988600ABA0A7 /* Rubik-BoldItalic.ttf */; };
+		F2783BA526DC988700ABA0A7 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2783B9726DC988600ABA0A7 /* Rubik-SemiBold.ttf */; };
+		F2783BA726DC996000ABA0A7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783BA626DC996000ABA0A7 /* SignInView.swift */; };
+		F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783BA926DCABFF00ABA0A7 /* AuthSideTextFieldView.swift */; };
+		F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783BAB26DCAF9300ABA0A7 /* AuthButtonView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2783B6826DC8B5200ABA0A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2783B4E26DC8B5100ABA0A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2783B5526DC8B5100ABA0A7;
+			remoteInfo = "Dance Sport Network";
+		};
+		F2783B7326DC8B5200ABA0A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2783B4E26DC8B5100ABA0A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2783B5526DC8B5100ABA0A7;
+			remoteInfo = "Dance Sport Network";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Sport Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Sport_NetworkApp.swift; sourceTree = "<group>"; };
+		F2783B5B26DC8B5100ABA0A7 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		F2783B5D26DC8B5100ABA0A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2783B6026DC8B5100ABA0A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2783B6226DC8B5100ABA0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2783B6726DC8B5200ABA0A7 /* Dance Sport NetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Sport NetworkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2783B6B26DC8B5200ABA0A7 /* Dance_Sport_NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Sport_NetworkTests.swift; sourceTree = "<group>"; };
+		F2783B6D26DC8B5200ABA0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2783B7226DC8B5200ABA0A7 /* Dance Sport NetworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Sport NetworkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2783B7626DC8B5200ABA0A7 /* Dance_Sport_NetworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Sport_NetworkUITests.swift; sourceTree = "<group>"; };
+		F2783B7826DC8B5200ABA0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2783B8426DC915900ABA0A7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F2783B8726DC950700ABA0A7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F2783B8A26DC988600ABA0A7 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Regular.ttf"; path = "../../../resource/Rubik/static/Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		F2783B8B26DC988600ABA0A7 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Light.ttf"; path = "../../../resource/Rubik/static/Rubik-Light.ttf"; sourceTree = "<group>"; };
+		F2783B8C26DC988600ABA0A7 /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-ExtraBoldItalic.ttf"; path = "../../../resource/Rubik/static/Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		F2783B8D26DC988600ABA0A7 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-LightItalic.ttf"; path = "../../../resource/Rubik/static/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		F2783B8E26DC988600ABA0A7 /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-SemiBoldItalic.ttf"; path = "../../../resource/Rubik/static/Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		F2783B8F26DC988600ABA0A7 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Medium.ttf"; path = "../../../resource/Rubik/static/Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		F2783B9026DC988600ABA0A7 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Bold.ttf"; path = "../../../resource/Rubik/static/Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		F2783B9126DC988600ABA0A7 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BlackItalic.ttf"; path = "../../../resource/Rubik/static/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F2783B9226DC988600ABA0A7 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Black.ttf"; path = "../../../resource/Rubik/static/Rubik-Black.ttf"; sourceTree = "<group>"; };
+		F2783B9326DC988600ABA0A7 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-MediumItalic.ttf"; path = "../../../resource/Rubik/static/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F2783B9426DC988600ABA0A7 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Italic.ttf"; path = "../../../resource/Rubik/static/Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		F2783B9526DC988600ABA0A7 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-ExtraBold.ttf"; path = "../../../resource/Rubik/static/Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F2783B9626DC988600ABA0A7 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BoldItalic.ttf"; path = "../../../resource/Rubik/static/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F2783B9726DC988600ABA0A7 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-SemiBold.ttf"; path = "../../../resource/Rubik/static/Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		F2783BA626DC996000ABA0A7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F2783BA926DCABFF00ABA0A7 /* AuthSideTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSideTextFieldView.swift; sourceTree = "<group>"; };
+		F2783BAB26DCAF9300ABA0A7 /* AuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2783B5326DC8B5100ABA0A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2783B6426DC8B5200ABA0A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2783B6F26DC8B5200ABA0A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2783B4D26DC8B5100ABA0A7 = {
+			isa = PBXGroup;
+			children = (
+				F2783B5826DC8B5100ABA0A7 /* Dance Sport Network */,
+				F2783B6A26DC8B5200ABA0A7 /* Dance Sport NetworkTests */,
+				F2783B7526DC8B5200ABA0A7 /* Dance Sport NetworkUITests */,
+				F2783B5726DC8B5100ABA0A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2783B5726DC8B5100ABA0A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */,
+				F2783B6726DC8B5200ABA0A7 /* Dance Sport NetworkTests.xctest */,
+				F2783B7226DC8B5200ABA0A7 /* Dance Sport NetworkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2783B5826DC8B5100ABA0A7 /* Dance Sport Network */ = {
+			isa = PBXGroup;
+			children = (
+				F2783BA826DCABD300ABA0A7 /* View */,
+				F2783B8926DC97CF00ABA0A7 /* Fonts */,
+				F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */,
+				F2783B8626DC94DB00ABA0A7 /* App */,
+				F2783B5B26DC8B5100ABA0A7 /* Template.swift */,
+				F2783B5D26DC8B5100ABA0A7 /* Assets.xcassets */,
+				F2783B6226DC8B5100ABA0A7 /* Info.plist */,
+				F2783B5F26DC8B5100ABA0A7 /* Preview Content */,
+				F2783B8426DC915900ABA0A7 /* Launch Screen.storyboard */,
+			);
+			path = "Dance Sport Network";
+			sourceTree = "<group>";
+		};
+		F2783B5F26DC8B5100ABA0A7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2783B6026DC8B5100ABA0A7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2783B6A26DC8B5200ABA0A7 /* Dance Sport NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2783B6B26DC8B5200ABA0A7 /* Dance_Sport_NetworkTests.swift */,
+				F2783B6D26DC8B5200ABA0A7 /* Info.plist */,
+			);
+			path = "Dance Sport NetworkTests";
+			sourceTree = "<group>";
+		};
+		F2783B7526DC8B5200ABA0A7 /* Dance Sport NetworkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F2783B7626DC8B5200ABA0A7 /* Dance_Sport_NetworkUITests.swift */,
+				F2783B7826DC8B5200ABA0A7 /* Info.plist */,
+			);
+			path = "Dance Sport NetworkUITests";
+			sourceTree = "<group>";
+		};
+		F2783B8626DC94DB00ABA0A7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F2783BA626DC996000ABA0A7 /* SignInView.swift */,
+				F2783B8726DC950700ABA0A7 /* SignUpView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F2783B8926DC97CF00ABA0A7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2783B9226DC988600ABA0A7 /* Rubik-Black.ttf */,
+				F2783B9126DC988600ABA0A7 /* Rubik-BlackItalic.ttf */,
+				F2783B9026DC988600ABA0A7 /* Rubik-Bold.ttf */,
+				F2783B9626DC988600ABA0A7 /* Rubik-BoldItalic.ttf */,
+				F2783B9526DC988600ABA0A7 /* Rubik-ExtraBold.ttf */,
+				F2783B8C26DC988600ABA0A7 /* Rubik-ExtraBoldItalic.ttf */,
+				F2783B9426DC988600ABA0A7 /* Rubik-Italic.ttf */,
+				F2783B8B26DC988600ABA0A7 /* Rubik-Light.ttf */,
+				F2783B8D26DC988600ABA0A7 /* Rubik-LightItalic.ttf */,
+				F2783B8F26DC988600ABA0A7 /* Rubik-Medium.ttf */,
+				F2783B9326DC988600ABA0A7 /* Rubik-MediumItalic.ttf */,
+				F2783B8A26DC988600ABA0A7 /* Rubik-Regular.ttf */,
+				F2783B9726DC988600ABA0A7 /* Rubik-SemiBold.ttf */,
+				F2783B8E26DC988600ABA0A7 /* Rubik-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F2783BA826DCABD300ABA0A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2783BA926DCABFF00ABA0A7 /* AuthSideTextFieldView.swift */,
+				F2783BAB26DCAF9300ABA0A7 /* AuthButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2783B5526DC8B5100ABA0A7 /* Dance Sport Network */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2783B7B26DC8B5200ABA0A7 /* Build configuration list for PBXNativeTarget "Dance Sport Network" */;
+			buildPhases = (
+				F2783B5226DC8B5100ABA0A7 /* Sources */,
+				F2783B5326DC8B5100ABA0A7 /* Frameworks */,
+				F2783B5426DC8B5100ABA0A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dance Sport Network";
+			productName = "Dance Sport Network";
+			productReference = F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2783B6626DC8B5200ABA0A7 /* Dance Sport NetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2783B7E26DC8B5200ABA0A7 /* Build configuration list for PBXNativeTarget "Dance Sport NetworkTests" */;
+			buildPhases = (
+				F2783B6326DC8B5200ABA0A7 /* Sources */,
+				F2783B6426DC8B5200ABA0A7 /* Frameworks */,
+				F2783B6526DC8B5200ABA0A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2783B6926DC8B5200ABA0A7 /* PBXTargetDependency */,
+			);
+			name = "Dance Sport NetworkTests";
+			productName = "Dance Sport NetworkTests";
+			productReference = F2783B6726DC8B5200ABA0A7 /* Dance Sport NetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F2783B7126DC8B5200ABA0A7 /* Dance Sport NetworkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2783B8126DC8B5200ABA0A7 /* Build configuration list for PBXNativeTarget "Dance Sport NetworkUITests" */;
+			buildPhases = (
+				F2783B6E26DC8B5200ABA0A7 /* Sources */,
+				F2783B6F26DC8B5200ABA0A7 /* Frameworks */,
+				F2783B7026DC8B5200ABA0A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2783B7426DC8B5200ABA0A7 /* PBXTargetDependency */,
+			);
+			name = "Dance Sport NetworkUITests";
+			productName = "Dance Sport NetworkUITests";
+			productReference = F2783B7226DC8B5200ABA0A7 /* Dance Sport NetworkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2783B4E26DC8B5100ABA0A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F2783B5526DC8B5100ABA0A7 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F2783B6626DC8B5200ABA0A7 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = F2783B5526DC8B5100ABA0A7;
+					};
+					F2783B7126DC8B5200ABA0A7 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = F2783B5526DC8B5100ABA0A7;
+					};
+				};
+			};
+			buildConfigurationList = F2783B5126DC8B5100ABA0A7 /* Build configuration list for PBXProject "Dance Sport Network" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2783B4D26DC8B5100ABA0A7;
+			productRefGroup = F2783B5726DC8B5100ABA0A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2783B5526DC8B5100ABA0A7 /* Dance Sport Network */,
+				F2783B6626DC8B5200ABA0A7 /* Dance Sport NetworkTests */,
+				F2783B7126DC8B5200ABA0A7 /* Dance Sport NetworkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2783B5426DC8B5100ABA0A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2783B9A26DC988600ABA0A7 /* Rubik-ExtraBoldItalic.ttf in Resources */,
+				F2783BA426DC988700ABA0A7 /* Rubik-BoldItalic.ttf in Resources */,
+				F2783BA326DC988700ABA0A7 /* Rubik-ExtraBold.ttf in Resources */,
+				F2783B8526DC915900ABA0A7 /* Launch Screen.storyboard in Resources */,
+				F2783B9B26DC988600ABA0A7 /* Rubik-LightItalic.ttf in Resources */,
+				F2783B9C26DC988600ABA0A7 /* Rubik-SemiBoldItalic.ttf in Resources */,
+				F2783BA526DC988700ABA0A7 /* Rubik-SemiBold.ttf in Resources */,
+				F2783BA226DC988700ABA0A7 /* Rubik-Italic.ttf in Resources */,
+				F2783B9826DC988600ABA0A7 /* Rubik-Regular.ttf in Resources */,
+				F2783B9F26DC988700ABA0A7 /* Rubik-BlackItalic.ttf in Resources */,
+				F2783BA026DC988700ABA0A7 /* Rubik-Black.ttf in Resources */,
+				F2783B9926DC988600ABA0A7 /* Rubik-Light.ttf in Resources */,
+				F2783B9D26DC988600ABA0A7 /* Rubik-Medium.ttf in Resources */,
+				F2783BA126DC988700ABA0A7 /* Rubik-MediumItalic.ttf in Resources */,
+				F2783B6126DC8B5100ABA0A7 /* Preview Assets.xcassets in Resources */,
+				F2783B5E26DC8B5100ABA0A7 /* Assets.xcassets in Resources */,
+				F2783B9E26DC988600ABA0A7 /* Rubik-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2783B6526DC8B5200ABA0A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2783B7026DC8B5200ABA0A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2783B5226DC8B5100ABA0A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2783B5C26DC8B5100ABA0A7 /* Template.swift in Sources */,
+				F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */,
+				F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */,
+				F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */,
+				F2783BA726DC996000ABA0A7 /* SignInView.swift in Sources */,
+				F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2783B6326DC8B5200ABA0A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2783B6C26DC8B5200ABA0A7 /* Dance_Sport_NetworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2783B6E26DC8B5200ABA0A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2783B7726DC8B5200ABA0A7 /* Dance_Sport_NetworkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2783B6926DC8B5200ABA0A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2783B5526DC8B5100ABA0A7 /* Dance Sport Network */;
+			targetProxy = F2783B6826DC8B5200ABA0A7 /* PBXContainerItemProxy */;
+		};
+		F2783B7426DC8B5200ABA0A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2783B5526DC8B5100ABA0A7 /* Dance Sport Network */;
+			targetProxy = F2783B7326DC8B5200ABA0A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F2783B7926DC8B5200ABA0A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2783B7A26DC8B5200ABA0A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2783B7C26DC8B5200ABA0A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Dance Sport Network/Preview Content\"";
+				DEVELOPMENT_TEAM = 4CZP9C7L6H;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Dance Sport Network/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pf.Dance-Sport-Network";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2783B7D26DC8B5200ABA0A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Dance Sport Network/Preview Content\"";
+				DEVELOPMENT_TEAM = 4CZP9C7L6H;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Dance Sport Network/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pf.Dance-Sport-Network";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F2783B7F26DC8B5200ABA0A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZP9C7L6H;
+				INFOPLIST_FILE = "Dance Sport NetworkTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pf.Dance-Sport-NetworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dance Sport Network.app/Dance Sport Network";
+			};
+			name = Debug;
+		};
+		F2783B8026DC8B5200ABA0A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZP9C7L6H;
+				INFOPLIST_FILE = "Dance Sport NetworkTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pf.Dance-Sport-NetworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dance Sport Network.app/Dance Sport Network";
+			};
+			name = Release;
+		};
+		F2783B8226DC8B5200ABA0A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZP9C7L6H;
+				INFOPLIST_FILE = "Dance Sport NetworkUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pf.Dance-Sport-NetworkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dance Sport Network";
+			};
+			name = Debug;
+		};
+		F2783B8326DC8B5200ABA0A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZP9C7L6H;
+				INFOPLIST_FILE = "Dance Sport NetworkUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pf.Dance-Sport-NetworkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dance Sport Network";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2783B5126DC8B5100ABA0A7 /* Build configuration list for PBXProject "Dance Sport Network" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2783B7926DC8B5200ABA0A7 /* Debug */,
+				F2783B7A26DC8B5200ABA0A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2783B7B26DC8B5200ABA0A7 /* Build configuration list for PBXNativeTarget "Dance Sport Network" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2783B7C26DC8B5200ABA0A7 /* Debug */,
+				F2783B7D26DC8B5200ABA0A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2783B7E26DC8B5200ABA0A7 /* Build configuration list for PBXNativeTarget "Dance Sport NetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2783B7F26DC8B5200ABA0A7 /* Debug */,
+				F2783B8026DC8B5200ABA0A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2783B8126DC8B5200ABA0A7 /* Build configuration list for PBXNativeTarget "Dance Sport NetworkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2783B8226DC8B5200ABA0A7 /* Debug */,
+				F2783B8326DC8B5200ABA0A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2783B4E26DC8B5100ABA0A7 /* Project object */;
+}
