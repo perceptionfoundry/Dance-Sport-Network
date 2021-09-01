@@ -18,7 +18,7 @@ struct NewPostView: View {
             HStack {
                 Spacer()
                 Text("CREATE A NEW POST")
-                    .font(.custom("Rubik_Bold", size: 18))
+                    .font(.custom("Rubik-Bold", size: 18))
                 Spacer()
                 Image("sample")
                     .resizable()
@@ -45,7 +45,7 @@ struct NewPostView: View {
                     //MARK: DESCRIPTION
                     HStack{
                         Text("DESCRIPTION")
-                            .font(.custom("Rubik_Bold", size: 16))
+                            .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
                     
@@ -62,7 +62,7 @@ struct NewPostView: View {
                     //MARK: TAG FRIEND
                     HStack{
                         Text("TAG FRIENDS")
-                            .font(.custom("Rubik_Bold", size: 16))
+                            .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
                     
@@ -78,7 +78,7 @@ struct NewPostView: View {
                     //MARK: HASHTAG
                     HStack{
                         Text("TAG FRIENDS")
-                            .font(.custom("Rubik_Bold", size: 16))
+                            .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
                     
@@ -94,7 +94,7 @@ struct NewPostView: View {
                     //MARK: LOCATION TAG
                     HStack{
                         Text("TAG FRIENDS")
-                            .font(.custom("Rubik_Bold", size: 16))
+                            .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
                     
@@ -110,7 +110,7 @@ struct NewPostView: View {
                     //MARK: PROMOTE POST
                     HStack{
                         Text("PROMOTE YOUR POST")
-                            .font(.custom("Rubik_Bold", size: 16))
+                            .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
                     
