@@ -96,8 +96,8 @@ struct SetupUpView: View {
                     Spacer()
                 }
                 
-                TextField("Write about you...", text: $nameValue)
-                    .font(.custom("Rubik_Bold", size: 14))
+                TextView(text: $bioValue, didStartEditing: .constant(false), height: .constant(10), isReturn: .constant(false), placeHolder: "Write about you...")
+                    .frame(height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white))
@@ -106,7 +106,7 @@ struct SetupUpView: View {
                                     
                     .padding(.bottom)
                 
-                //USERNAME
+                //CALENDAR
                 HStack{
                     Text("CALENDAR")
                         .font(.custom("Rubik_Bold", size: 16))

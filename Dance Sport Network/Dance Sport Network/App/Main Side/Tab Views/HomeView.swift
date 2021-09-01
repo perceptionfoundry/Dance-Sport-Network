@@ -177,7 +177,9 @@ struct FeedPostView: View {
             
             Image("post_sample")
                 .resizable()
+                .scaledToFill()
                 .frame(width: GetRect().width * 0.9, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
                 
             
             HStack{

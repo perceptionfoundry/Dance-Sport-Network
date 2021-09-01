@@ -38,6 +38,15 @@
 		F2783BBD26DD5F0000ABA0A7 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783BBC26DD5F0000ABA0A7 /* NewPostView.swift */; };
 		F2783BBF26DD5F1100ABA0A7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783BBE26DD5F1100ABA0A7 /* SearchView.swift */; };
 		F2783BC126DD5F2100ABA0A7 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783BC026DD5F2100ABA0A7 /* ChatView.swift */; };
+		F2B5BEB126DF4D4200708E40 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5BEB026DF4D4200708E40 /* TextView.swift */; };
+		F2B5BEB426DF594700708E40 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5BEB326DF594700708E40 /* PromoteView.swift */; };
+		F2B5BEB526DF5F6E00708E40 /* Baron Neue Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB226DD5B4D00ABA0A7 /* Baron Neue Bold.otf */; };
+		F2B5BEB626DF5F7400708E40 /* Baron Neue Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB126DD5B4D00ABA0A7 /* Baron Neue Bold Italic.otf */; };
+		F2B5BEB726DF5F7800708E40 /* Baron Neue Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB526DD5B4E00ABA0A7 /* Baron Neue Black Italic.otf */; };
+		F2B5BEB826DF5F7C00708E40 /* Baron Neue Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB026DD5B4C00ABA0A7 /* Baron Neue Black.otf */; };
+		F2B5BEB926DF5F8200708E40 /* Baron Neue Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB426DD5B4E00ABA0A7 /* Baron Neue Italic.otf */; };
+		F2B5BEBA26DF5F8600708E40 /* Baron Neue.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB326DD5B4E00ABA0A7 /* Baron Neue.otf */; };
+		F2B5BEBC26DF687E00708E40 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5BEBB26DF687E00708E40 /* PaymentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +110,9 @@
 		F2783BBC26DD5F0000ABA0A7 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		F2783BBE26DD5F1100ABA0A7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F2783BC026DD5F2100ABA0A7 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		F2B5BEB026DF4D4200708E40 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		F2B5BEB326DF594700708E40 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoteView.swift; sourceTree = "<group>"; };
+		F2B5BEBB26DF687E00708E40 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +241,7 @@
 		F2783BA826DCABD300ABA0A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2B5BEB026DF4D4200708E40 /* TextView.swift */,
 				F2783BA926DCABFF00ABA0A7 /* AuthSideTextFieldView.swift */,
 				F2783BAB26DCAF9300ABA0A7 /* AuthButtonView.swift */,
 			);
@@ -248,13 +261,23 @@
 		F2783BB726DD5E4C00ABA0A7 /* Main Side */ = {
 			isa = PBXGroup;
 			children = (
+				F2B5BEB226DF56E700708E40 /* Tab Views */,
+				F2B5BEB326DF594700708E40 /* PromoteView.swift */,
+				F2B5BEBB26DF687E00708E40 /* PaymentView.swift */,
+			);
+			path = "Main Side";
+			sourceTree = "<group>";
+		};
+		F2B5BEB226DF56E700708E40 /* Tab Views */ = {
+			isa = PBXGroup;
+			children = (
 				F2783BB826DD5E9F00ABA0A7 /* MainTabView.swift */,
 				F2783BBA26DD5EC200ABA0A7 /* HomeView.swift */,
 				F2783BBC26DD5F0000ABA0A7 /* NewPostView.swift */,
 				F2783BBE26DD5F1100ABA0A7 /* SearchView.swift */,
 				F2783BC026DD5F2100ABA0A7 /* ChatView.swift */,
 			);
-			path = "Main Side";
+			path = "Tab Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,13 +391,19 @@
 				F2783B9C26DC988600ABA0A7 /* Rubik-SemiBoldItalic.ttf in Resources */,
 				F2783BA526DC988700ABA0A7 /* Rubik-SemiBold.ttf in Resources */,
 				F2783BA226DC988700ABA0A7 /* Rubik-Italic.ttf in Resources */,
+				F2B5BEB526DF5F6E00708E40 /* Baron Neue Bold.otf in Resources */,
 				F2783B9826DC988600ABA0A7 /* Rubik-Regular.ttf in Resources */,
 				F2783B9F26DC988700ABA0A7 /* Rubik-BlackItalic.ttf in Resources */,
 				F2783BA026DC988700ABA0A7 /* Rubik-Black.ttf in Resources */,
 				F2783B9926DC988600ABA0A7 /* Rubik-Light.ttf in Resources */,
 				F2783B9D26DC988600ABA0A7 /* Rubik-Medium.ttf in Resources */,
 				F2783BA126DC988700ABA0A7 /* Rubik-MediumItalic.ttf in Resources */,
+				F2B5BEB626DF5F7400708E40 /* Baron Neue Bold Italic.otf in Resources */,
+				F2B5BEB726DF5F7800708E40 /* Baron Neue Black Italic.otf in Resources */,
+				F2B5BEB826DF5F7C00708E40 /* Baron Neue Black.otf in Resources */,
 				F2783B6126DC8B5100ABA0A7 /* Preview Assets.xcassets in Resources */,
+				F2B5BEBA26DF5F8600708E40 /* Baron Neue.otf in Resources */,
+				F2B5BEB926DF5F8200708E40 /* Baron Neue Italic.otf in Resources */,
 				F2783B5E26DC8B5100ABA0A7 /* Assets.xcassets in Resources */,
 				F2783B9E26DC988600ABA0A7 /* Rubik-Bold.ttf in Resources */,
 			);
@@ -404,14 +433,17 @@
 				F2783BBB26DD5EC200ABA0A7 /* HomeView.swift in Sources */,
 				F2783BAE26DCE46200ABA0A7 /* SetupUpView.swift in Sources */,
 				F2783B5C26DC8B5100ABA0A7 /* Template.swift in Sources */,
+				F2B5BEB126DF4D4200708E40 /* TextView.swift in Sources */,
 				F2783BB926DD5E9F00ABA0A7 /* MainTabView.swift in Sources */,
 				F2783BC126DD5F2100ABA0A7 /* ChatView.swift in Sources */,
 				F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */,
 				F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */,
 				F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */,
+				F2B5BEB426DF594700708E40 /* PromoteView.swift in Sources */,
 				F2783BA726DC996000ABA0A7 /* SignInView.swift in Sources */,
 				F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */,
 				F2783BBD26DD5F0000ABA0A7 /* NewPostView.swift in Sources */,
+				F2B5BEBC26DF687E00708E40 /* PaymentView.swift in Sources */,
 				F2783BBF26DD5F1100ABA0A7 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

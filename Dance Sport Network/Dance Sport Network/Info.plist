@@ -4,14 +4,14 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Baron Neue Bold</string>
-		<string>Baron Neue</string>
-		<string>Rubik-Medium</string>
-		<string>Rubik-SemiBold</string>
-		<string>Rubik-Italic</string>
-		<string>Rubik-Bold</string>
-		<string>Rubik-Regular</string>
-		<string>Rubik-Black</string>
+		<string>Fonts/Baron Neue Bold.otf</string>
+		<string>Fonts/Baron Neue.otf</string>
+		<string>Fonts/Rubik-Medium.ttf</string>
+		<string>Fonts/Rubik-SemiBold.ttf</string>
+		<string>Fonts/Rubik-Italic.ttf</string>
+		<string>Fonts/Rubik-Bold.ttf</string>
+		<string>Fonts/Rubik-Regular.ttf</string>
+		<string>Fonts/Rubik-Black.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
