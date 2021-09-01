@@ -47,6 +47,7 @@
 		F2B5BEB926DF5F8200708E40 /* Baron Neue Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB426DD5B4E00ABA0A7 /* Baron Neue Italic.otf */; };
 		F2B5BEBA26DF5F8600708E40 /* Baron Neue.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2783BB326DD5B4E00ABA0A7 /* Baron Neue.otf */; };
 		F2B5BEBC26DF687E00708E40 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5BEBB26DF687E00708E40 /* PaymentView.swift */; };
+		F2B5BEBE26DF747900708E40 /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5BEBD26DF747900708E40 /* BottomCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		F2B5BEB026DF4D4200708E40 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		F2B5BEB326DF594700708E40 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoteView.swift; sourceTree = "<group>"; };
 		F2B5BEBB26DF687E00708E40 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		F2B5BEBD26DF747900708E40 /* BottomCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 		F2783BA826DCABD300ABA0A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2B5BEBD26DF747900708E40 /* BottomCardView.swift */,
 				F2B5BEB026DF4D4200708E40 /* TextView.swift */,
 				F2783BA926DCABFF00ABA0A7 /* AuthSideTextFieldView.swift */,
 				F2783BAB26DCAF9300ABA0A7 /* AuthButtonView.swift */,
@@ -439,6 +442,7 @@
 				F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */,
 				F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */,
 				F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */,
+				F2B5BEBE26DF747900708E40 /* BottomCardView.swift in Sources */,
 				F2B5BEB426DF594700708E40 /* PromoteView.swift in Sources */,
 				F2783BA726DC996000ABA0A7 /* SignInView.swift in Sources */,
 				F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */,
