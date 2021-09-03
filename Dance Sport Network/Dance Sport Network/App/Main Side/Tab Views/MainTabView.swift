@@ -25,7 +25,7 @@ struct MainTabView: View {
             case 2:
                 SearchView()
             case 3:
-                ChatView()
+                ChatTabView()
             default :
                 HomeView()
             }
@@ -75,7 +75,8 @@ struct MainTabView: View {
                 }
                 .frame(width: GetRect().width * 0.8, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.white))
+                                .fill(Color.white)
+                                .shadow(radius: 5))
                
                 .overlay(Rectangle()
                             .fill(Color("background"))

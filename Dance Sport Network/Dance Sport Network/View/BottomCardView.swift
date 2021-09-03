@@ -48,20 +48,21 @@ struct BottomCardView<Content:View>: View {
                 Spacer()
                 VStack{
                     Capsule()
-                        .fill(Color.gray)
+                        .fill(Color.accentColor)
                         .frame(width: 80, height: 4, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding(.top, 4)
+                        .padding(.top, 20)
                     content
                         
                 }
                 .background(Color.white)
-                .cornerRadius(50)
+                .cornerRadius(30)
                 .frame(height:height)
                 .offset(y : cardDismissal && cardShown ? 0 : height)
                 .animation(.default.delay(0.5))
             }
             
         }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        
        
     }
 }

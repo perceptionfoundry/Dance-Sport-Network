@@ -97,6 +97,9 @@ struct PaymentView: View {
                 VStack {
                     PaymentTextView(title: "Name of card", placeHolder: "Card holder name", textfieldValue: .constant(""))
                     PaymentTextView(title: "Card Number", placeHolder: "xxxx-xxxxx-xx", textfieldValue: .constant(""))
+                        .overlay(
+                            Image("visa")
+                                .padding(.trailing, 40), alignment: .trailing)
                     HStack{
                         PaymentTextView(title: "Expiry date (MM/YY)", placeHolder: "MM/YY", textfieldValue: .constant(""))
                         

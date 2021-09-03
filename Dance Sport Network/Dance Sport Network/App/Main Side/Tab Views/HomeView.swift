@@ -10,10 +10,13 @@ import SwiftUI
 struct HomeView: View {
     
     @State var isFeed = true
+    @State var showCard = false
+    @State var dismissCard = false
     @State var searchValue = ""
 
     var body: some View {
         
+        ZStack{
         VStack {
             HStack {
                 Spacer()
@@ -100,7 +103,10 @@ struct HomeView: View {
             ScrollView(showsIndicators:false){
                 LazyVStack{
                     ForEach(0...8, id:\.self){ _ in
-                        FeedPostView()
+                        FeedPostView {
+                            showCard.toggle()
+                            dismissCard.toggle()
+                        }
                     }
                 }
             }
@@ -110,6 +116,49 @@ struct HomeView: View {
             
         }
         .padding()
+            
+            BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.6) {
+                
+          
+                    VStack{
+                        
+                        HStack {
+                            Text("SHARE TO USER")
+                                .font(.custom("Baron Neue", size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Button(action: {
+                                showCard.toggle()
+                                dismissCard.toggle()
+                            }, label: {
+                                Image(systemName: "xmark")
+                                    .foregroundColor(.black)
+
+                            })
+                        }
+                        .padding(.bottom)
+                        
+                        ScrollView{
+                            VStack{
+                                
+                                ForEach(0...5, id:\.self){ i in
+                                    ShareUserPopView(){
+                                        showCard = false
+                                        dismissCard = false
+                                    }
+                                }
+                                
+                            }
+                        }
+
+                      
+                    }
+                    .padding()
+                
+            }
+    }
+        .edgesIgnoringSafeArea(.bottom)
         .background(
          
             VStack {
@@ -145,6 +194,9 @@ struct TrendUserView: View {
 }
 
 struct FeedPostView: View {
+    
+    var shareActionFunc : ()->()
+    
     var body: some View {
         VStack{
             
@@ -207,7 +259,7 @@ struct FeedPostView: View {
                 .frame(height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Spacer()
                 Button(action: {
-                    
+                    shareActionFunc()
                 }, label: {
                     Image("share")
                     
@@ -228,3 +280,4 @@ struct FeedPostView: View {
                         .fill(Color.white))
     }
 }
+
