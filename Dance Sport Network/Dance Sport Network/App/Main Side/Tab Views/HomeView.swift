@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var isFeed = true
     @State var showCard = false
     @State var dismissCard = false
-    @State var searchValue = ""
+   
 
     var body: some View {
         
@@ -57,60 +57,13 @@ struct HomeView: View {
                             .fill(Color.white)
                             .frame(height: 50))
             
-            HStack {
-                HStack {
-                    
-                    TextField("What’s on your mind?", text: $searchValue)
-                        .font(.custom("Rubik_Bold", size: 14))
-                        .padding()
-                       
-                }
-                .padding(.horizontal)
-                .background(RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.white))
-                .background(RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.gray))
-                .padding(.bottom)
-                
-                Button(action: {
-                    
-                }, label: {
-                    Image("Photos")
-                        .resizable()
-                        .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .offset(y: -10)
-                })
+        
+            if isFeed{
+                MainFeedView(showCard: $showCard, dismissCard: $dismissCard)
+            }else{
+                MainExploreView()
             }
-            
-            HStack {
-                Text("TRENDING")
-                    .font(.custom("Rubik_Bold", size: 16))
-                Spacer()
-            }
-            
-            //HORIZONTAL SCROLL
-            ScrollView(.horizontal,showsIndicators:false){
-                LazyHStack{
-                    
-                    ForEach(0...5, id:\.self){ _ in
-                        TrendUserView()
-                    }
-                }
-            }
-            .frame(width: GetRect().width * 0.95, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
-            
-            ScrollView(showsIndicators:false){
-                LazyVStack{
-                    ForEach(0...8, id:\.self){ _ in
-                        FeedPostView {
-                            showCard.toggle()
-                            dismissCard.toggle()
-                        }
-                    }
-                }
-            }
-           
+          
             
             Spacer()
             

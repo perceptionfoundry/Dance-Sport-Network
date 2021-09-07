@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F21ED6EA26E1EBDF00AFA3FD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ED6E926E1EBDF00AFA3FD /* ChatView.swift */; };
 		F21ED6EC26E1FB1600AFA3FD /* ShareUserPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ED6EB26E1FB1600AFA3FD /* ShareUserPopView.swift */; };
+		F22B9B2626E7290A00662DE6 /* MainExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2526E7290A00662DE6 /* MainExploreView.swift */; };
+		F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2726E7393A00662DE6 /* MainFeedView.swift */; };
+		F22B9B2A26E740F700662DE6 /* MainEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2926E740F700662DE6 /* MainEventView.swift */; };
+		F26EB52D26E7BBC70031760F /* MainPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52C26E7BBC70031760F /* MainPartnerView.swift */; };
 		F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */; };
 		F2783B5C26DC8B5100ABA0A7 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5B26DC8B5100ABA0A7 /* Template.swift */; };
 		F2783B5E26DC8B5100ABA0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2783B5D26DC8B5100ABA0A7 /* Assets.xcassets */; };
@@ -72,6 +76,10 @@
 /* Begin PBXFileReference section */
 		F21ED6E926E1EBDF00AFA3FD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		F21ED6EB26E1FB1600AFA3FD /* ShareUserPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUserPopView.swift; sourceTree = "<group>"; };
+		F22B9B2526E7290A00662DE6 /* MainExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainExploreView.swift; sourceTree = "<group>"; };
+		F22B9B2726E7393A00662DE6 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
+		F22B9B2926E740F700662DE6 /* MainEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEventView.swift; sourceTree = "<group>"; };
+		F26EB52C26E7BBC70031760F /* MainPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartnerView.swift; sourceTree = "<group>"; };
 		F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Sport Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Sport_NetworkApp.swift; sourceTree = "<group>"; };
 		F2783B5B26DC8B5100ABA0A7 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
@@ -161,6 +169,17 @@
 				F21ED6E926E1EBDF00AFA3FD /* ChatView.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		F22B9B2426E728F000662DE6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F22B9B2526E7290A00662DE6 /* MainExploreView.swift */,
+				F22B9B2726E7393A00662DE6 /* MainFeedView.swift */,
+				F22B9B2926E740F700662DE6 /* MainEventView.swift */,
+				F26EB52C26E7BBC70031760F /* MainPartnerView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F2783B4D26DC8B5100ABA0A7 = {
@@ -286,9 +305,10 @@
 		F2783BB726DD5E4C00ABA0A7 /* Main Side */ = {
 			isa = PBXGroup;
 			children = (
-				F21ED6E426E1EA6E00AFA3FD /* Chat */,
 				F2B5BEB226DF56E700708E40 /* Tab Views */,
 				F21ED6E326E1EA5500AFA3FD /* Post  */,
+				F22B9B2426E728F000662DE6 /* Home */,
+				F21ED6E426E1EA6E00AFA3FD /* Chat */,
 			);
 			path = "Main Side";
 			sourceTree = "<group>";
@@ -458,11 +478,14 @@
 				F2783BBB26DD5EC200ABA0A7 /* HomeView.swift in Sources */,
 				F2783BAE26DCE46200ABA0A7 /* SetupUpView.swift in Sources */,
 				F2783B5C26DC8B5100ABA0A7 /* Template.swift in Sources */,
+				F22B9B2626E7290A00662DE6 /* MainExploreView.swift in Sources */,
 				F2B5BEB126DF4D4200708E40 /* TextView.swift in Sources */,
 				F2783BB926DD5E9F00ABA0A7 /* MainTabView.swift in Sources */,
+				F26EB52D26E7BBC70031760F /* MainPartnerView.swift in Sources */,
 				F2783BC126DD5F2100ABA0A7 /* ChatTabView.swift in Sources */,
 				F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */,
 				F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */,
+				F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */,
 				F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */,
 				F2B5BEBE26DF747900708E40 /* BottomCardView.swift in Sources */,
 				F2B5BEB426DF594700708E40 /* PromoteView.swift in Sources */,
@@ -471,6 +494,7 @@
 				F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */,
 				F2783BBD26DD5F0000ABA0A7 /* NewPostView.swift in Sources */,
 				F2B5BEBC26DF687E00708E40 /* PaymentView.swift in Sources */,
+				F22B9B2A26E740F700662DE6 /* MainEventView.swift in Sources */,
 				F2783BBF26DD5F1100ABA0A7 /* SearchView.swift in Sources */,
 				F21ED6EC26E1FB1600AFA3FD /* ShareUserPopView.swift in Sources */,
 			);
