@@ -12,6 +12,7 @@ struct HomeView: View {
     @State var isFeed = true
     @State var showCard = false
     @State var dismissCard = false
+    @State var isProfile = false
    
 
     var body: some View {
@@ -22,10 +23,22 @@ struct HomeView: View {
                 Spacer()
                 Image("Logo2")
                 Spacer()
-                Image("sample")
-                    .resizable()
-                    .clipShape(Circle())
-                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                NavigationLink(
+                    destination: MainProfileView(),
+                    isActive: $isProfile,
+                    label: {
+                        
+                        Button(action: {
+                            isProfile.toggle()
+                        }, label: {
+                            Image("sample")
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        })
+                    })
+                
             }
             
             ZStack{

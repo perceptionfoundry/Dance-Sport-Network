@@ -1,0 +1,212 @@
+//
+//  MainProfileView.swift
+//  Dance Sport Network
+//
+//  Created by Syed ShahRukh Haider on 07/09/2021.
+//
+
+import SwiftUI
+
+struct MainProfileView: View {
+    
+    @State var isPost = true
+    @State var isCourse = false
+    @State var isCalendar = false
+    @State var isMessage = false
+    
+    let data = (1...9).map { "Item \($0)" }
+    let columns = [
+            GridItem(.adaptive(minimum: 100))
+        ]
+    var body: some View {
+        
+        VStack {
+           
+            Image("image2")
+                .resizable()
+                .scaledToFill()
+                .clipShape(Circle())
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Circle()
+                                .stroke(Color(#colorLiteral(red: 0.08289604634, green: 0.8600253463, blue: 0.8315178156, alpha: 1)),lineWidth: 5)
+                                .frame(width: 102, height: 102, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+            
+            VStack(spacing: 2){
+            Text("USER NAME")
+                .foregroundColor(.black)
+                .font(.custom("Rubik-SemiBold", size: 16))
+            
+            Text("@username")
+                .foregroundColor(.gray)
+                .font(.custom("Rubik-Regular", size: 12))
+            }
+              
+            Text("FOLLOW")
+                .foregroundColor(.white)
+                .font(.custom("Rubik-SemiBold", size: 12))
+                .padding(.horizontal, 40)
+                .padding(.vertical, 10)
+                .background(Capsule()
+                                .fill(Color.accentColor))
+            
+            //MARK: COUNT
+            HStack{
+                Spacer()
+                VStack(spacing: 8){
+                    Text("989")
+                        .foregroundColor(.black)
+                        .font(.custom("Rubik-SemiBold", size: 16))
+                    
+                    Text("Posts")
+                        .foregroundColor(.gray)
+                        .font(.custom("Rubik-Regular", size: 12))
+                }
+                .frame(width: GetRect().width / 4, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                VStack(spacing: 8){
+                    Text("2M")
+                        .foregroundColor(.black)
+                        .font(.custom("Rubik-SemiBold", size: 16))
+                    
+                    Text("Followers")
+                        .foregroundColor(.gray)
+                        .font(.custom("Rubik-Regular", size: 12))
+                }
+                .frame(width: GetRect().width / 4, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                
+                VStack(spacing: 8){
+                    Text("2K")
+                        .foregroundColor(.black)
+                        .font(.custom("Rubik-SemiBold", size: 16))
+                    
+                    Text("Following")
+                        .foregroundColor(.gray)
+                        .font(.custom("Rubik-Regular", size: 12))
+                }
+                .frame(width: GetRect().width / 4, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                Spacer()
+            }
+            
+            HStack{
+                
+                ProfileButtonView(title: "Posts", isSelected: isPost) {
+                    
+                    isPost = true
+                    isCourse = false
+                    isCalendar = false
+                    isMessage = false
+                }
+                
+                ProfileButtonView(title: "Course", isSelected: isCourse) {
+                    isPost = false
+                    isCourse = true
+                    isCalendar = false
+                    isMessage = false
+                }
+                
+                ProfileButtonView(title: "Calendar", isSelected: isCalendar) {
+                    isPost = false
+                    isCourse = false
+                    isCalendar = true
+                    isMessage = false
+                }
+                
+                ProfileButtonView(title: "Message", isSelected: isMessage) {
+                    isPost = false
+                    isCourse = false
+                    isCalendar = false
+                    isMessage = true
+                }
+            }
+            .padding(.bottom, 30)
+            
+            ScrollView {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(0..<data.count, id: \.self) { index in
+                                
+                                if index == 3 || index == 5{
+                                    Image("image\(index + 1)")
+                                        .resizable()
+                                        .blur(radius: 4)
+                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                        .overlay(
+                                            VStack{
+                                                
+                                                HStack{
+                                                    Image("Video")
+                                                    Spacer()
+                                                }
+                                                .padding(.horizontal)
+                                                .padding(.bottom, 5)
+                                                
+                                                Text("Watch Now")
+                                                    .foregroundColor(.white)
+                                                    .font(.custom("Rubik-Regular", size: 12))
+                                                
+                                                Text("$9.99")
+                                                    .foregroundColor(.white)
+                                                    .font(.custom("Rubik-SemiBold", size: 16))
+                                                
+                                                
+                                            }.offset(y: 10), alignment: .top)
+                                }
+                                else{
+                                Image("image\(index + 1)")
+                                    .resizable()
+                                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .frame(maxHeight: 350)
+                Spacer()
+            
+            
+        }
+        .padding(.horizontal)
+        .background(
+         
+            ZStack(alignment: .top) {
+                Color("background")
+                    .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Image("image_cp")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: GetRect().width, height:300)
+                    .overlay(LinearGradient(gradient: Gradient(colors: [Color.accentColor .opacity(0.4), Color.white .opacity(0.9)]), startPoint: .top, endPoint: .bottom))
+                    
+            }
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+           
+            )
+       
+    }
+}
+
+struct MainProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainProfileView()
+    }
+}
+
+struct ProfileButtonView: View {
+    var title : String
+    var isSelected : Bool
+    var actionFunc : ()->()
+    
+    var body: some View {
+        Button(action: {
+            actionFunc()
+        }, label: {
+            Text(title)
+                .foregroundColor(isSelected ? .white : .accentColor)
+                .font(.custom("Rubik-SemiBold", size: 12))
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+                .background(RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.accentColor .opacity(isSelected ? 1 : 0.3)))
+        })
+    }
+}

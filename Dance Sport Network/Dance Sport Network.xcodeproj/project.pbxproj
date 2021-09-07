@@ -13,6 +13,7 @@
 		F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2726E7393A00662DE6 /* MainFeedView.swift */; };
 		F22B9B2A26E740F700662DE6 /* MainEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2926E740F700662DE6 /* MainEventView.swift */; };
 		F26EB52D26E7BBC70031760F /* MainPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52C26E7BBC70031760F /* MainPartnerView.swift */; };
+		F26EB53026E7D4B50031760F /* MainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52F26E7D4B50031760F /* MainProfileView.swift */; };
 		F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */; };
 		F2783B5C26DC8B5100ABA0A7 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5B26DC8B5100ABA0A7 /* Template.swift */; };
 		F2783B5E26DC8B5100ABA0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2783B5D26DC8B5100ABA0A7 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		F22B9B2726E7393A00662DE6 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		F22B9B2926E740F700662DE6 /* MainEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEventView.swift; sourceTree = "<group>"; };
 		F26EB52C26E7BBC70031760F /* MainPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartnerView.swift; sourceTree = "<group>"; };
+		F26EB52F26E7D4B50031760F /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
 		F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Sport Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Sport_NetworkApp.swift; sourceTree = "<group>"; };
 		F2783B5B26DC8B5100ABA0A7 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 				F26EB52C26E7BBC70031760F /* MainPartnerView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F26EB52E26E7D46A0031760F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F26EB52F26E7D4B50031760F /* MainProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F2783B4D26DC8B5100ABA0A7 = {
@@ -305,6 +315,7 @@
 		F2783BB726DD5E4C00ABA0A7 /* Main Side */ = {
 			isa = PBXGroup;
 			children = (
+				F26EB52E26E7D46A0031760F /* Profile */,
 				F2B5BEB226DF56E700708E40 /* Tab Views */,
 				F21ED6E326E1EA5500AFA3FD /* Post  */,
 				F22B9B2426E728F000662DE6 /* Home */,
@@ -485,6 +496,7 @@
 				F2783BC126DD5F2100ABA0A7 /* ChatTabView.swift in Sources */,
 				F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */,
 				F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */,
+				F26EB53026E7D4B50031760F /* MainProfileView.swift in Sources */,
 				F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */,
 				F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */,
 				F2B5BEBE26DF747900708E40 /* BottomCardView.swift in Sources */,

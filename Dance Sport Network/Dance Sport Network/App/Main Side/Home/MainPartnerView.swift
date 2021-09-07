@@ -17,7 +17,7 @@ struct MainPartnerView: View {
                      cardInfo(id: "4", name: "Shahryaar", place: "Multan", image: "explore_sample4"),]
     var body: some View {
         
-        VStack(spacing: 60){
+        VStack(spacing: 40){
             
             //MARK: TOP
             HStack {
@@ -41,7 +41,7 @@ struct MainPartnerView: View {
                     .clipShape(Circle())
                     .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
-            
+          
             
             //MARK: JOIN BUTTON
             Button(action: {
@@ -62,6 +62,7 @@ struct MainPartnerView: View {
                 .background(Capsule()
                             .fill(Color.accentColor))
             })
+            .padding(.bottom, 30)
            
              //MARK: IMAGE
             
