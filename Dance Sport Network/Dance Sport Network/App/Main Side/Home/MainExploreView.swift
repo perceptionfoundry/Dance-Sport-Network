@@ -70,6 +70,11 @@ struct MainExploreView: View {
              
                 Spacer()
                 
+                NavigationLink(
+                    destination: MainMusicStyleView(),
+                    isActive: $isExplore,
+                    label: {
+                    
                 Button(action: {
                     isExplore.toggle()
                 }, label: {
@@ -83,6 +88,8 @@ struct MainExploreView: View {
                             .foregroundColor(.accentColor)
                     }
                 })
+                
+            })
             }
             
             ScrollView(.horizontal){

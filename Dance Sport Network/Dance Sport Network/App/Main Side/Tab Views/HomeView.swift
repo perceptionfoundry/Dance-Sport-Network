@@ -123,6 +123,7 @@ struct HomeView: View {
                     .padding()
                 
             }
+            .opacity(showCard ? 1 : 0)
     }
         .edgesIgnoringSafeArea(.bottom)
         .background(

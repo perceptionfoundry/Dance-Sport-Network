@@ -55,7 +55,7 @@ struct BottomCardView<Content:View>: View {
                         
                 }
                 .background(Color.white)
-                .cornerRadius(30)
+                .cornerRadius(50)
                 .frame(height:height)
                 .offset(y : cardDismissal && cardShown ? 0 : height)
                 .animation(.default.delay(0.5))

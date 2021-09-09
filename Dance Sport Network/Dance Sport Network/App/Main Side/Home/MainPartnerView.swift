@@ -10,6 +10,7 @@ import SwiftUI
 struct MainPartnerView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State var isSegue = false
     
     var dummyData = [cardInfo(id: "1", name: "Shahrukh", place: "Karachi", image: "explore_sample5"),
                      cardInfo(id: "2", name: "Sarim", place: "Islamabad", image: "explore_sample2"),
@@ -86,10 +87,17 @@ struct MainPartnerView: View {
                 })
             
             HStack(spacing: 40) {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                
+                NavigationLink(
+                    destination: MainMusicPlaylistView(),
+                    isActive: $isSegue,
+                    label: {
+                        Button(action: {
+                            isSegue.toggle()
+                        }, label: {
                     Image("yes")
                 })
-                
+            })
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Image("no")
                 })

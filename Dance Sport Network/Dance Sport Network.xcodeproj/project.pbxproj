@@ -3,15 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F21ED6EA26E1EBDF00AFA3FD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ED6E926E1EBDF00AFA3FD /* ChatView.swift */; };
 		F21ED6EC26E1FB1600AFA3FD /* ShareUserPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ED6EB26E1FB1600AFA3FD /* ShareUserPopView.swift */; };
+		F225807B26E9D846001FC591 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = F225807A26E9D846001FC591 /* ACarousel */; };
+		F225807D26E9EC8A001FC591 /* MainMusicDanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F225807C26E9EC8A001FC591 /* MainMusicDanceView.swift */; };
+		F225807F26E9F823001FC591 /* MainMusicPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F225807E26E9F823001FC591 /* MainMusicPlaylistView.swift */; };
 		F22B9B2626E7290A00662DE6 /* MainExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2526E7290A00662DE6 /* MainExploreView.swift */; };
 		F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2726E7393A00662DE6 /* MainFeedView.swift */; };
 		F22B9B2A26E740F700662DE6 /* MainEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2926E740F700662DE6 /* MainEventView.swift */; };
+		F2595B2F26E9CFDC0031E1AA /* MainMusicStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2595B2E26E9CFDC0031E1AA /* MainMusicStyleView.swift */; };
 		F26EB52D26E7BBC70031760F /* MainPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52C26E7BBC70031760F /* MainPartnerView.swift */; };
 		F26EB53026E7D4B50031760F /* MainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52F26E7D4B50031760F /* MainProfileView.swift */; };
 		F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */; };
@@ -77,9 +81,12 @@
 /* Begin PBXFileReference section */
 		F21ED6E926E1EBDF00AFA3FD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		F21ED6EB26E1FB1600AFA3FD /* ShareUserPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUserPopView.swift; sourceTree = "<group>"; };
+		F225807C26E9EC8A001FC591 /* MainMusicDanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMusicDanceView.swift; sourceTree = "<group>"; };
+		F225807E26E9F823001FC591 /* MainMusicPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMusicPlaylistView.swift; sourceTree = "<group>"; };
 		F22B9B2526E7290A00662DE6 /* MainExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainExploreView.swift; sourceTree = "<group>"; };
 		F22B9B2726E7393A00662DE6 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		F22B9B2926E740F700662DE6 /* MainEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEventView.swift; sourceTree = "<group>"; };
+		F2595B2E26E9CFDC0031E1AA /* MainMusicStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMusicStyleView.swift; sourceTree = "<group>"; };
 		F26EB52C26E7BBC70031760F /* MainPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartnerView.swift; sourceTree = "<group>"; };
 		F26EB52F26E7D4B50031760F /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
 		F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Sport Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F225807B26E9D846001FC591 /* ACarousel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +190,16 @@
 				F26EB52C26E7BBC70031760F /* MainPartnerView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F2595B2D26E9CFC20031E1AA /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				F2595B2E26E9CFDC0031E1AA /* MainMusicStyleView.swift */,
+				F225807C26E9EC8A001FC591 /* MainMusicDanceView.swift */,
+				F225807E26E9F823001FC591 /* MainMusicPlaylistView.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		F26EB52E26E7D46A0031760F /* Profile */ = {
@@ -315,6 +333,7 @@
 		F2783BB726DD5E4C00ABA0A7 /* Main Side */ = {
 			isa = PBXGroup;
 			children = (
+				F2595B2D26E9CFC20031E1AA /* Music */,
 				F26EB52E26E7D46A0031760F /* Profile */,
 				F2B5BEB226DF56E700708E40 /* Tab Views */,
 				F21ED6E326E1EA5500AFA3FD /* Post  */,
@@ -352,6 +371,9 @@
 			dependencies = (
 			);
 			name = "Dance Sport Network";
+			packageProductDependencies = (
+				F225807A26E9D846001FC591 /* ACarousel */,
+			);
 			productName = "Dance Sport Network";
 			productReference = F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +445,9 @@
 				Base,
 			);
 			mainGroup = F2783B4D26DC8B5100ABA0A7;
+			packageReferences = (
+				F225807926E9D846001FC591 /* XCRemoteSwiftPackageReference "ACarousel" */,
+			);
 			productRefGroup = F2783B5726DC8B5100ABA0A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -499,6 +524,7 @@
 				F26EB53026E7D4B50031760F /* MainProfileView.swift in Sources */,
 				F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */,
 				F2783BAA26DCABFF00ABA0A7 /* AuthSideTextFieldView.swift in Sources */,
+				F225807D26E9EC8A001FC591 /* MainMusicDanceView.swift in Sources */,
 				F2B5BEBE26DF747900708E40 /* BottomCardView.swift in Sources */,
 				F2B5BEB426DF594700708E40 /* PromoteView.swift in Sources */,
 				F2783BA726DC996000ABA0A7 /* SignInView.swift in Sources */,
@@ -508,7 +534,9 @@
 				F2B5BEBC26DF687E00708E40 /* PaymentView.swift in Sources */,
 				F22B9B2A26E740F700662DE6 /* MainEventView.swift in Sources */,
 				F2783BBF26DD5F1100ABA0A7 /* SearchView.swift in Sources */,
+				F225807F26E9F823001FC591 /* MainMusicPlaylistView.swift in Sources */,
 				F21ED6EC26E1FB1600AFA3FD /* ShareUserPopView.swift in Sources */,
+				F2595B2F26E9CFDC0031E1AA /* MainMusicStyleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +856,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F225807926E9D846001FC591 /* XCRemoteSwiftPackageReference "ACarousel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JWAutumn/ACarousel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F225807A26E9D846001FC591 /* ACarousel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F225807926E9D846001FC591 /* XCRemoteSwiftPackageReference "ACarousel" */;
+			productName = ACarousel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2783B4E26DC8B5100ABA0A7 /* Project object */;
 }
