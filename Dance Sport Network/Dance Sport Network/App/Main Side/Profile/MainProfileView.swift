@@ -87,7 +87,7 @@ struct MainProfileView: View {
                 
                 Spacer()
             }
-            
+            //MARK: Selection BUTTONS
             HStack{
                 
                 ProfileButtonView(title: "Posts", isSelected: isPost) {
@@ -112,55 +112,138 @@ struct MainProfileView: View {
                     isMessage = false
                 }
                 
-                ProfileButtonView(title: "Message", isSelected: isMessage) {
-                    isPost = false
-                    isCourse = false
-                    isCalendar = false
-                    isMessage = true
-                }
+                NavigationLink(
+                    destination: ChatView(),
+                    isActive: $isMessage,
+                    label: {
+                        ProfileButtonView(title: "Message", isSelected: isMessage) {
+                           
+                            isMessage.toggle()
+                        }
+                    })
+                
+               
             }
             .padding(.bottom, 30)
+            // MARK: SUBVIEW
             
-            ScrollView {
-                        LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(0..<data.count, id: \.self) { index in
-                                
-                                if index == 3 || index == 5{
+            if isPost {
+                ScrollView {
+                            LazyVGrid(columns: columns, spacing: 20) {
+                                ForEach(0..<data.count, id: \.self) { index in
+
+                                    if index == 3 || index == 5{
+                                        Image("image\(index + 1)")
+                                            .resizable()
+                                            .blur(radius: 4)
+                                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                            .overlay(
+                                                VStack{
+
+                                                    HStack{
+                                                        Image("Video")
+                                                        Spacer()
+                                                    }
+                                                    .padding(.horizontal)
+                                                    .padding(.bottom, 5)
+
+                                                    Text("Watch Now")
+                                                        .foregroundColor(.white)
+                                                        .font(.custom("Rubik-Regular", size: 12))
+
+                                                    Text("$9.99")
+                                                        .foregroundColor(.white)
+                                                        .font(.custom("Rubik-SemiBold", size: 16))
+
+
+                                                }.offset(y: 10), alignment: .top)
+                                    }
+                                    else{
                                     Image("image\(index + 1)")
                                         .resizable()
-                                        .blur(radius: 4)
-                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                        .overlay(
-                                            VStack{
-                                                
-                                                HStack{
-                                                    Image("Video")
-                                                    Spacer()
-                                                }
-                                                .padding(.horizontal)
-                                                .padding(.bottom, 5)
-                                                
-                                                Text("Watch Now")
-                                                    .foregroundColor(.white)
-                                                    .font(.custom("Rubik-Regular", size: 12))
-                                                
-                                                Text("$9.99")
-                                                    .foregroundColor(.white)
-                                                    .font(.custom("Rubik-SemiBold", size: 16))
-                                                
-                                                
-                                            }.offset(y: 10), alignment: .top)
-                                }
-                                else{
-                                Image("image\(index + 1)")
-                                    .resizable()
-                                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    }
                                 }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        .frame(maxHeight: 350)
+            }
+
+            if isCalendar{
+                
+                
+                ScrollView(showsIndicators:false){
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("MY EVENT")
+                            .font(.custom("Baron Neue Bold", size: 18))
+                        
+                        MyEventView(eventDate: "10 Sept", eventTitle: "Event Title", eventImage: "event_sample1", eventVenue: "Event venue address", editAction: {
+                            
+                        }, binAction: {
+                            
+                        })
+                        
+                        MyEventView(eventDate: "15 Sept", eventTitle: "Event Title 2", eventImage: "event_sample2", eventVenue: "Event venue address 2", editAction: {
+                            
+                        }, binAction: {
+                            
+                        })
+                            
+                        //MARK: ADD EVENTS
+                        HStack {
+                            Spacer()
+                            AuthButtonView(title: "+  ADD EVENT") {
+                                
+                            }
+                            
+                            Spacer()
+                        }
+                        
+                        Text("MY AVAILABILITY")
+                            .font(.custom("Baron Neue Bold", size: 18))
+                        CalendarView(selectedDate:.constant(Date()))
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(20)
+                            .frame(height: 300)
+                        
+                        
+                        HStack {
+                            Text("October")
+                                .font(.custom("Baron Neue Bold", size: 18))
+                            Spacer()
+                            //MARK: MONTH SECTIO
+                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                                Image("Edit_1")
+                            })
+                        }
+                        
+                        HStack{
+                            Text("Oct. 11 - 14")
+                                .font(.custom("Rubik-SemiBold", size: 14))
+                            Spacer()
+                            Text("Unavailable")
+                                .font(.custom("Rubik-Regular", size: 14))
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        
+                        //MARK: ADD AVAILABILITY
+                        HStack {
+                            Spacer()
+                            AuthButtonView(title: "+  ADD AVAILABILITY") {
+                                
+                            }
+                            
+                            Spacer()
+                        }
                     }
-                    .frame(maxHeight: 350)
+                }
+                
+            }
+            
                 Spacer()
             
             
@@ -208,5 +291,65 @@ struct ProfileButtonView: View {
                 .background(RoundedRectangle(cornerRadius: 8)
                                 .fill(Color.accentColor .opacity(isSelected ? 1 : 0.3)))
         })
+    }
+}
+
+struct MyEventView: View {
+    
+    var eventDate : String
+    var eventTitle : String
+    var eventImage: String
+    var eventVenue : String
+    var editAction : ()->()
+    var binAction : ()->()
+
+    
+    var body: some View {
+        Image(eventImage)
+            .resizable()
+            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+            .frame(height:90)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .overlay(
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15).opacity(0.4)
+                    
+                    HStack{
+                        VStack(alignment:.leading){
+                            Text(eventDate)
+                                .font(.custom("Rubik-SemiBold", size: 16))
+                                .foregroundColor(.accentColor)
+                            Text(eventTitle)
+                                .autocapitalization(.sentences)
+                                .font(.custom("Rubik-SemiBold", size: 18))
+                                .foregroundColor(.white)
+                                .padding(.bottom)
+                            
+                            Text(eventVenue)
+                                .font(.custom("Rubik-Regular", size: 12))
+                                .foregroundColor(.white)
+                        }
+                        Spacer()
+                        
+                        VStack{
+                            Button(action: {
+                                
+                                editAction()
+                            }, label: {
+                                Image("Edit")
+                            })
+                            
+                            Button(action: {
+                                binAction()
+                            }, label: {
+                                Image("Bin")
+                            })
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
+            )
     }
 }

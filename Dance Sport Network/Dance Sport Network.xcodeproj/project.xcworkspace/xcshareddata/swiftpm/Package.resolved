@@ -9,6 +9,15 @@
           "revision": "8a322513580f21288fd87eb3a1341c247b3e2a76",
           "version": "0.2.0"
         }
+      },
+      {
+        "package": "FSCalendar",
+        "repositoryURL": "https://github.com/WenchaoD/FSCalendar.git",
+        "state": {
+          "branch": null,
+          "revision": "4e79a201fad268408a4fd9e2ef429497def9594f",
+          "version": "2.8.2"
+        }
       }
     ]
   },
