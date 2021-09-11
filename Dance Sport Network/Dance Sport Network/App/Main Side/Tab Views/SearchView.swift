@@ -10,12 +10,14 @@ import SwiftUI
 struct SearchView: View {
     
     @State var searchValue = ""
+    @State var showOtherEvent = false
+
     let data = (1...9).map { "Item \($0)" }
     let columns = [
             GridItem(.adaptive(minimum: 100))
         ]
     var body: some View {
-        
+        ZStack{
         VStack {
       
             Image("Logo2")
@@ -42,6 +44,7 @@ struct SearchView: View {
                             ForEach(0..<data.count, id: \.self) { index in
                                 
                                 if index == 3 || index == 5{
+                                    
                                     Image("image\(index + 1)")
                                         .resizable()
                                         .blur(radius: 4)
@@ -66,11 +69,17 @@ struct SearchView: View {
                                                 
                                                 
                                             }.offset(y: 10), alignment: .top)
+                                     
+                                            
+                                      
                                 }
                                 else{
                                 Image("image\(index + 1)")
                                     .resizable()
                                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .onTapGesture {
+                                        showOtherEvent.toggle()
+                                    }
                                 }
                             }
                         }
@@ -81,6 +90,10 @@ struct SearchView: View {
             
             Spacer()
         }
+    
+            OthersEventView(dismiss: $showOtherEvent).opacity(showOtherEvent ? 1 : 0)
+        
+    }
         .background(
          
             VStack {

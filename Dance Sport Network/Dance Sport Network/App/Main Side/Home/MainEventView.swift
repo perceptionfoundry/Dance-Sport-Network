@@ -6,16 +6,27 @@
 //
 
 import SwiftUI
+import ACarousel
 
 struct MainEventView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State var currentIndex = 1
     @State var xValue :CGFloat = 0
     var body: some View {
-        
-        ScrollView(showsIndicators: false){
-        VStack {
+        VStack{
             HStack {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    
+                    Image(systemName: "arrow.backward")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.black)
+                        .padding(5)
+                        
+                })
+                Spacer()
                 Spacer()
                 Text("EVENTS")
                     .font(.custom("Rubik-SemiBold", size: 18))
@@ -25,51 +36,44 @@ struct MainEventView: View {
                     .clipShape(Circle())
                     .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
+        ScrollView(showsIndicators: false){
+        VStack {
+           
             
-            
-            ScrollView(.horizontal,showsIndicators: false){
-                    
-             
-                HStack(spacing: 20) {
-                    
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width:100, height: 10)
-                    ForEach( 0...2, id:\.self){index in
-                            
-                        EventImageView(indexValue: index)
-                                .offset(x: xValue)
-                                .tag(index)
-                            .padding(.vertical)
-                    }
-                   
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width:100, height: 10)
-                }
+            ACarousel(0..<3, id: \.self) { index in
+                EventImageView(indexValue: index)
+                    .frame(width: 200,height: GetRect().height * 0.325)
+                    .offset(x: xValue)
+                    .tag(index)
+                    .padding(.vertical)
             }
+            .frame(width: 250,height: GetRect().height * 0.375)
+
             
             .padding(.bottom)
             
             HStack {
                 Text("Visit")
+                    .font(.footnote)
                     .foregroundColor(.white)
                     .padding(.horizontal, 30)
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 10)
                     .background(Capsule()
                                 .foregroundColor(.accentColor))
                 
-                Text("Calendar")
+                Text("Add to Calendar")
+                    .font(.footnote)
                     .foregroundColor(.white)
                     .padding(.horizontal, 30)
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 10)
                     .background(Capsule()
                                 .foregroundColor(.accentColor))
                 
                 Text("Review")
+                    .font(.footnote)
                     .foregroundColor(.white)
                     .padding(.horizontal, 30)
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 10)
                     .background(Capsule()
                                 .foregroundColor(.accentColor))
             }
@@ -117,6 +121,7 @@ struct MainEventView: View {
             Spacer()
         }
         }
+    }
         .padding(.horizontal)
         .background(
          

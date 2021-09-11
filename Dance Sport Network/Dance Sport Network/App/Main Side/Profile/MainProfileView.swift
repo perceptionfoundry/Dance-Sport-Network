@@ -13,6 +13,8 @@ struct MainProfileView: View {
     @State var isCourse = false
     @State var isCalendar = false
     @State var isMessage = false
+    @State var isAddAvailablity = false
+    @State var isAddEvent = false
     
     let data = (1...9).map { "Item \($0)" }
     let columns = [
@@ -20,6 +22,7 @@ struct MainProfileView: View {
         ]
     var body: some View {
         
+        ZStack{
         VStack {
            
             Image("image2")
@@ -194,7 +197,7 @@ struct MainProfileView: View {
                         HStack {
                             Spacer()
                             AuthButtonView(title: "+  ADD EVENT") {
-                                
+                                isAddEvent.toggle()
                             }
                             
                             Spacer()
@@ -234,7 +237,7 @@ struct MainProfileView: View {
                         HStack {
                             Spacer()
                             AuthButtonView(title: "+  ADD AVAILABILITY") {
-                                
+                                isAddAvailablity.toggle()
                             }
                             
                             Spacer()
@@ -249,6 +252,14 @@ struct MainProfileView: View {
             
         }
         .padding(.horizontal)
+            
+            AddAvailabilityView(dismiss:$isAddAvailablity).opacity(isAddAvailablity ? 1:0)
+                .animation(.linear)
+            
+            AddEventView(dismiss:$isAddEvent).opacity(isAddEvent ? 1:0)
+                .animation(.linear)
+        }
+        .navigationBarBackButtonHidden(isAddAvailablity || isAddEvent)
         .background(
          
             ZStack(alignment: .top) {
@@ -294,62 +305,4 @@ struct ProfileButtonView: View {
     }
 }
 
-struct MyEventView: View {
-    
-    var eventDate : String
-    var eventTitle : String
-    var eventImage: String
-    var eventVenue : String
-    var editAction : ()->()
-    var binAction : ()->()
 
-    
-    var body: some View {
-        Image(eventImage)
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-            .frame(height:90)
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            .overlay(
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15).opacity(0.4)
-                    
-                    HStack{
-                        VStack(alignment:.leading){
-                            Text(eventDate)
-                                .font(.custom("Rubik-SemiBold", size: 16))
-                                .foregroundColor(.accentColor)
-                            Text(eventTitle)
-                                .autocapitalization(.sentences)
-                                .font(.custom("Rubik-SemiBold", size: 18))
-                                .foregroundColor(.white)
-                                .padding(.bottom)
-                            
-                            Text(eventVenue)
-                                .font(.custom("Rubik-Regular", size: 12))
-                                .foregroundColor(.white)
-                        }
-                        Spacer()
-                        
-                        VStack{
-                            Button(action: {
-                                
-                                editAction()
-                            }, label: {
-                                Image("Edit")
-                            })
-                            
-                            Button(action: {
-                                binAction()
-                            }, label: {
-                                Image("Bin")
-                            })
-                        }
-                    }
-                    .padding(.horizontal)
-                }
-                
-            )
-    }
-}
