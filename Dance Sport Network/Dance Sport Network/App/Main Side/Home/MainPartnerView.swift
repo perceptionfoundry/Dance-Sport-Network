@@ -89,7 +89,7 @@ struct MainPartnerView: View {
             HStack(spacing: 40) {
                 
                 NavigationLink(
-                    destination: MainMusicPlaylistView(),
+                    destination: ChatView(),
                     isActive: $isSegue,
                     label: {
                         Button(action: {

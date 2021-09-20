@@ -77,7 +77,7 @@ struct NewPostView: View {
                     
                     //MARK: HASHTAG
                     HStack{
-                        Text("TAG FRIENDS")
+                        Text("HASHTAGS")
                             .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
@@ -93,7 +93,7 @@ struct NewPostView: View {
                     
                     //MARK: LOCATION TAG
                     HStack{
-                        Text("TAG FRIENDS")
+                        Text("LOCATION")
                             .font(.custom("Rubik-SemiBold", size: 14))
                         Spacer()
                     }
@@ -126,7 +126,7 @@ struct NewPostView: View {
                                     Text("Country: 4")
                                 },
                                 label: {
-                                    Text("Choose country to promote")
+                                    Text("Choose country")
                                         .padding()
                                         .frame(height: 45)
                                    

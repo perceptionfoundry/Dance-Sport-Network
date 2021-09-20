@@ -31,7 +31,7 @@ struct MainMusicPlaylistView: View {
                         
                 })
                 Spacer()
-                Text("PURCHASE SONGS")
+                Text("SONGS")
                     .font(.custom("Rubik-SemiBold", size: 18))
                 Spacer()
                 Image("sample")
@@ -140,7 +140,7 @@ struct SongCellView: View {
                     .foregroundColor(.gray)
                     .padding(.bottom)
                 
-                Text("$4.99")
+                Text("")
                     .font(.custom("Rubik-SemiBold", size: 14))
                     .foregroundColor(.accentColor)
                 
@@ -172,7 +172,7 @@ struct SongCellView: View {
                 Button(action: {
                     
                 }, label: {
-                    Text("Buy")
+                    Text("Play")
                         .font(.custom("Rubik-Regular", size: 12))
                         .foregroundColor(.white)
                         .padding(.horizontal, 20)

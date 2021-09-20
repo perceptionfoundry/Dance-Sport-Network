@@ -12,6 +12,7 @@ struct MainFeedView: View {
     @State var searchValue = ""
     @Binding var showCard : Bool
     @Binding var dismissCard : Bool
+    @Binding var isComment : Bool
 
     var body: some View {
         
@@ -66,6 +67,10 @@ struct MainFeedView: View {
                         FeedPostView {
                             showCard.toggle()
                             dismissCard.toggle()
+                        } commentActionFunc: {
+                            showCard.toggle()
+                            dismissCard.toggle()
+                            isComment.toggle()
                         }
                     }
                 }
@@ -76,6 +81,6 @@ struct MainFeedView: View {
 
 struct MainFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        MainFeedView(showCard: .constant(true), dismissCard: .constant(true))
+        MainFeedView(showCard: .constant(true), dismissCard: .constant(true), isComment: .constant(false))
     }
 }

@@ -13,6 +13,9 @@ struct HomeView: View {
     @State var showCard = false
     @State var dismissCard = false
     @State var isProfile = false
+    @State var isShare = false
+    @State var isComment = false
+
    
 
     var body: some View {
@@ -23,12 +26,12 @@ struct HomeView: View {
                 Spacer()
                 Image("Logo2")
                 Spacer()
-                
+            }.overlay(
                 NavigationLink(
                     destination: MainProfileView(),
                     isActive: $isProfile,
                     label: {
-                        
+
                         Button(action: {
                             isProfile.toggle()
                         }, label: {
@@ -38,8 +41,7 @@ struct HomeView: View {
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         })
                     })
-                
-            }
+                , alignment: .trailing)
             
             ZStack{
                 
@@ -57,7 +59,7 @@ struct HomeView: View {
                             .font(.custom("Rubik-Bold", size: 14))
                             .foregroundColor(isFeed ? .white : .accentColor)
                         Spacer()
-                        Text("Explore    ")
+                        Text("Explore        ")
                             .font(.custom("Rubik-Bold", size: 14))
                             .foregroundColor(!isFeed ? .white : .accentColor)
                     }
@@ -72,7 +74,7 @@ struct HomeView: View {
             
         
             if isFeed{
-                MainFeedView(showCard: $showCard, dismissCard: $dismissCard)
+                MainFeedView(showCard: $showCard, dismissCard: $dismissCard, isComment: $isComment)
             }else{
                 MainExploreView()
             }
@@ -85,7 +87,7 @@ struct HomeView: View {
             
             BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.6) {
                 
-          
+                if isComment == false{
                     VStack{
                         
                         HStack {
@@ -105,6 +107,37 @@ struct HomeView: View {
                         }
                         .padding(.bottom)
                         
+                        VStack {
+                            HStack {
+                                Text("Other User")
+                                    .font(.custom("Rubik-Bold", size: 16))
+                                    .foregroundColor(.black)
+                                Spacer()
+                                
+                                Button(action: {
+                                    isShare.toggle()
+                                    showCard.toggle()
+                                    dismissCard.toggle()
+                                    guard let data = URL(string: "https://www.apple.com") else { return }
+                                            let av = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+                                            UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+                                    
+                                }, label: {
+                                    Text("Invite")
+                                        .font(.custom("Rubik-Bold", size: 15))
+                                        .foregroundColor(Color.white)
+                                        .padding()
+                                        .background(Capsule()
+                                                        .frame(width: 80, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+                                })
+                            }
+                            
+                            Rectangle()
+                                .fill(Color.gray)
+                                .frame(height: 1)
+                        }
+                      
+                        
                         ScrollView{
                             VStack{
                                 
@@ -112,16 +145,82 @@ struct HomeView: View {
                                     ShareUserPopView(){
                                         showCard = false
                                         dismissCard = false
+                                        isShare = false
                                     }
                                 }
                                 
                             }
                         }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(height: 80)
 
                       
                     }
                     .padding()
+                }
                 
+                else{
+                    VStack{
+                        HStack {
+                            Text("Comments")
+                                .font(.custom("Baron Neue", size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Button(action: {
+                                showCard.toggle()
+                                dismissCard.toggle()
+                            }, label: {
+                                Image(systemName: "xmark")
+                                    .foregroundColor(.black)
+
+                            })
+                        }
+                        .padding(.bottom)
+                        
+                        ScrollView{
+                            
+                            VStack{
+                                ForEach(0...3,id:\.self){ index in
+                                    
+                                    if index == 0{
+                                        CommentView("Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+                                    }
+                                    else{
+                                        CommentView("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+                                    }
+                                   
+                                }
+                            }
+                        }
+                        HStack{
+                        TextField("Your comment", text: .constant(""))
+                            .padding()
+                            
+                            Button(action: {
+                                
+                            }, label: {
+                                Image(systemName: "paperplane.circle.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.trailing)
+                            })
+                            
+                    }
+                            .background(Capsule()
+                                            .stroke(Color.accentColor,lineWidth: 2))
+                    
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(height: 80)
+                    }
+                    .padding()
+                    
+                }
             }
             .opacity(showCard ? 1 : 0)
     }
@@ -163,6 +262,7 @@ struct TrendUserView: View {
 struct FeedPostView: View {
     
     var shareActionFunc : ()->()
+    var commentActionFunc : ()->()
     
     var body: some View {
         VStack{
@@ -214,7 +314,7 @@ struct FeedPostView: View {
                 })
                 .frame(height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Button(action: {
-                    
+                    commentActionFunc()
                 }, label: {
                     HStack {
                         Image("Chat_post")

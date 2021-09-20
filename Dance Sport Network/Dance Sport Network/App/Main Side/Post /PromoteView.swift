@@ -58,7 +58,7 @@ struct PromoteView: View {
                                 .foregroundColor(.black)
                                 .font(Font.custom("Rubik-Bold", size: 18, relativeTo: .title))
                             
-                            Text("$29.99")
+                            Text("$19.99")
                                 .font(Font.custom("Baron Neue Bold", size: 36))
                                 .foregroundColor(.accentColor)
                                 .padding(.top)
@@ -92,7 +92,7 @@ struct PromoteView: View {
                                 .foregroundColor(.black)
                                 .font(Font.custom("Rubik-Bold", size: 18, relativeTo: .title))
                             
-                            Text("$179.99")
+                            Text("$9.99")
                                 .font(Font.custom("Baron Neue Bold", size: 36))
                                 .foregroundColor(.accentColor)
                                 .padding(.top)

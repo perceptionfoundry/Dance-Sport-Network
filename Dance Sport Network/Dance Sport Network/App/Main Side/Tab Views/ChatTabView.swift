@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChatTabView: View {
     @State var showMessage = false
+    @State var isProfile = false
     
     var body: some View {
         
@@ -21,14 +22,26 @@ struct ChatTabView: View {
                         .font(.custom("Baron Neue", size: 20))
                         .foregroundColor(.black)
                 Spacer()
-                
-                Image("sample")
-                    .resizable()
-                    .clipShape(Circle())
-                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+              
             }
             .padding(10)
-            
+            .overlay(
+                NavigationLink(
+                    destination: MainProfileView(),
+                    isActive: $isProfile,
+                    label: {
+
+                        Button(action: {
+                            isProfile.toggle()
+                        }, label: {
+                            Image("sample")
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        })
+                        .padding(.trailing,25)
+                    })
+                , alignment: .trailing)
             
             //MARK: SCROLLVIEW
             

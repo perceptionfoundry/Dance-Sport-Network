@@ -11,91 +11,90 @@ struct SearchView: View {
     
     @State var searchValue = ""
     @State var showOtherEvent = false
-
+    
     let data = (1...9).map { "Item \($0)" }
     let columns = [
-            GridItem(.adaptive(minimum: 100))
-        ]
+        GridItem(.adaptive(minimum: 100))
+    ]
     var body: some View {
         ZStack{
-        VStack {
-      
-            Image("Logo2")
+            VStack {
                 
-            
-            HStack {
+                Image("Logo2")
                 
-                TextField("What’s on your mind?", text: $searchValue)
-                    .font(.custom("Rubik_Bold", size: 14))
-                    .padding()
-                   
-            }
-            .frame(width: GetRect().width * 0.8)
-            .padding(.horizontal)
-            .background(RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white))
-            .background(RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray))
-            .padding(.bottom)
-            
-            
-            ScrollView {
-                        LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(0..<data.count, id: \.self) { index in
+                
+                HStack {
+                    
+                    TextField("What’s on your mind?", text: $searchValue)
+                        .font(.custom("Rubik_Bold", size: 14))
+                        .padding()
+                    
+                }
+                .frame(width: GetRect().width * 0.8)
+                .padding(.horizontal)
+                .background(RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white))
+                .background(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray))
+                .padding(.bottom)
+                
+                
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(0..<data.count, id: \.self) { index in
+                            
+                            if index == 3 || index == 5{
                                 
-                                if index == 3 || index == 5{
-                                    
-                                    Image("image\(index + 1)")
-                                        .resizable()
-                                        .blur(radius: 4)
-                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                        .overlay(
-                                            VStack{
-                                                
-                                                HStack{
-                                                    Image("Video")
-                                                    Spacer()
-                                                }
-                                                .padding(.horizontal)
-                                                .padding(.bottom, 5)
-                                                
-                                                Text("Watch Now")
-                                                    .foregroundColor(.white)
-                                                    .font(.custom("Rubik-Regular", size: 12))
-                                                
-                                                Text("$9.99")
-                                                    .foregroundColor(.white)
-                                                    .font(.custom("Rubik-SemiBold", size: 16))
-                                                
-                                                
-                                            }.offset(y: 10), alignment: .top)
-                                     
-                                            
-                                      
-                                }
-                                else{
                                 Image("image\(index + 1)")
                                     .resizable()
-                                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .onTapGesture {
+                                    .blur(radius: 4)
+                                    .frame(width: 120, height: 120, alignment: .center)
+                                    .overlay(
+                                        VStack{
+                                            
+                                            HStack{
+                                                Image("Video")
+                                                Spacer()
+                                            }
+                                            .padding(.horizontal)
+                                            .padding(.bottom, 5)
+                                            
+                                            Text("Watch Now")
+                                                .foregroundColor(.white)
+                                                .font(.custom("Rubik-Regular", size: 12))
+                                            
+                                            Text("$9.99")
+                                                .foregroundColor(.white)
+                                                .font(.custom("Rubik-SemiBold", size: 16))
+                                            
+                                            
+                                        }.offset(y: 10), alignment: .top)
+                                
+                                
+                                
+                            }
+                            else{
+                                Image("image\(index + 1)")
+                                    .resizable()
+                                    .frame(width: 120, height: 120, alignment: .center)                                    .onTapGesture {
                                         showOtherEvent.toggle()
                                     }
-                                }
                             }
                         }
-                        .padding(.horizontal)
                     }
-                    .frame(maxHeight: 350)
+                    .padding(.horizontal)
+                }
+                .frame(maxHeight: 500)
+                
+                
+                Spacer()
+            }
             
-            
-            Spacer()
-        }
-    
             OthersEventView(dismiss: $showOtherEvent).opacity(showOtherEvent ? 1 : 0)
-        
-    }
+            
+        }
         .background(
-         
+            
             VStack {
                 Color("background")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -106,10 +105,10 @@ struct SearchView: View {
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 , alignment: .topTrailing)
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            )
-            
+        )
         
-       
+        
+        
     }
 }
 

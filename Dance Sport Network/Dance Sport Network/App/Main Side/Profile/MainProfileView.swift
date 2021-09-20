@@ -37,16 +37,16 @@ struct MainProfileView: View {
             VStack(spacing: 2){
             Text("USER NAME")
                 .foregroundColor(.black)
-                .font(.custom("Rubik-SemiBold", size: 16))
+                .font(.custom("Rubik-SemiBold", size: 20))
             
             Text("@username")
                 .foregroundColor(.gray)
-                .font(.custom("Rubik-Regular", size: 12))
+                .font(.custom("Rubik-Regular", size: 14))
             }
               
             Text("FOLLOW")
                 .foregroundColor(.white)
-                .font(.custom("Rubik-SemiBold", size: 12))
+                .font(.custom("Rubik-SemiBold", size: 14))
                 .padding(.horizontal, 40)
                 .padding(.vertical, 10)
                 .background(Capsule()
@@ -58,21 +58,21 @@ struct MainProfileView: View {
                 VStack(spacing: 8){
                     Text("989")
                         .foregroundColor(.black)
-                        .font(.custom("Rubik-SemiBold", size: 16))
+                        .font(.custom("Rubik-SemiBold", size: 18))
                     
                     Text("Posts")
                         .foregroundColor(.gray)
-                        .font(.custom("Rubik-Regular", size: 12))
+                        .font(.custom("Rubik-Regular", size: 14))
                 }
                 .frame(width: GetRect().width / 4, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 VStack(spacing: 8){
                     Text("2M")
                         .foregroundColor(.black)
-                        .font(.custom("Rubik-SemiBold", size: 16))
+                        .font(.custom("Rubik-SemiBold", size: 18))
                     
                     Text("Followers")
                         .foregroundColor(.gray)
-                        .font(.custom("Rubik-Regular", size: 12))
+                        .font(.custom("Rubik-Regular", size: 14))
                 }
                 .frame(width: GetRect().width / 4, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
@@ -80,11 +80,11 @@ struct MainProfileView: View {
                 VStack(spacing: 8){
                     Text("2K")
                         .foregroundColor(.black)
-                        .font(.custom("Rubik-SemiBold", size: 16))
+                        .font(.custom("Rubik-SemiBold", size: 18))
                     
                     Text("Following")
                         .foregroundColor(.gray)
-                        .font(.custom("Rubik-Regular", size: 12))
+                        .font(.custom("Rubik-Regular", size: 14))
                 }
                 .frame(width: GetRect().width / 4, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
@@ -101,7 +101,7 @@ struct MainProfileView: View {
                     isMessage = false
                 }
                 
-                ProfileButtonView(title: "Course", isSelected: isCourse) {
+                ProfileButtonView(title: "Music", isSelected: isCourse) {
                     isPost = false
                     isCourse = true
                     isCalendar = false
@@ -296,7 +296,7 @@ struct ProfileButtonView: View {
         }, label: {
             Text(title)
                 .foregroundColor(isSelected ? .white : .accentColor)
-                .font(.custom("Rubik-SemiBold", size: 12))
+                .font(.custom("Rubik-SemiBold", size: 13))
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
                 .background(RoundedRectangle(cornerRadius: 8)

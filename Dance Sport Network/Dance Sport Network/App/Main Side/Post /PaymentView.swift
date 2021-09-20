@@ -11,6 +11,8 @@ struct PaymentView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @State var isCard = false
+    
     var body: some View {
         
         VStack {
@@ -38,61 +40,64 @@ struct PaymentView: View {
                     Spacer()
                 }
                 
-                //MARK: CC BUTTON
+                //MARK: PAYPAL BUTTON
                 HStack(spacing: 30) {
                     Button(action: {
                         
                     }, label: {
-                        Text("Credit Card")
+                        Text("PayPal")
                             .font(.custom("Rubik-Bold", size: 14))
                             .foregroundColor(Color.white)
                             .padding()
                             .background(Capsule()
                                             .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
                 })
+                    Spacer()
                     
-                    
-                    //MARK: DEBIT CARD BUTTON
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Debit Card")
-                            .font(.custom("Rubik-Bold", size: 14))
-                            .foregroundColor(Color.black)
-                            .padding()
-                            .background(Capsule()
-                                            .fill(Color.white)
-                                            .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
-                    })
-                    .background(Capsule()
-                                    .stroke(Color.accentColor, lineWidth: 3)
-                                    .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
-                    
-                    
-                    //MARK: Paypal BUTTON
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("PayPal")
-                            .font(.custom("Rubik-Bold", size: 14))
-                            .foregroundColor(Color.black)
-                            .padding()
-                            .background(Capsule()
-                                            .fill(Color.white)
-                                            .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
-                    })
-                    .background(Capsule()
-                                    .stroke(Color.accentColor, lineWidth: 3)
-                                    .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+//                    //MARK: DEBIT CARD BUTTON
+//                    Button(action: {
+//
+//                    }, label: {
+//                        Text("Debit Card")
+//                            .font(.custom("Rubik-Bold", size: 14))
+//                            .foregroundColor(Color.black)
+//                            .padding()
+//                            .background(Capsule()
+//                                            .fill(Color.white)
+//                                            .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+//                    })
+//                    .background(Capsule()
+//                                    .stroke(Color.accentColor, lineWidth: 3)
+//                                    .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+//
+//
+//                    //MARK: CC BUTTON
+//                    Button(action: {
+//
+//                    }, label: {
+//                        Text("Credit Card")
+//                            .font(.custom("Rubik-Bold", size: 14))
+//                            .foregroundColor(Color.black)
+//                            .padding()
+//                            .background(Capsule()
+//                                            .fill(Color.white)
+//                                            .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+//                    })
+//                    .background(Capsule()
+//                                    .stroke(Color.accentColor, lineWidth: 3)
+//                                    .frame(width: 99,height: 47, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
 
 
                 }
+                .padding(.horizontal)
                 
              
             }
             .padding(.horizontal)
             .padding(.bottom)
             
+            
+            if isCard{
             Group{
                 VStack {
                     PaymentTextView(title: "Name of card", placeHolder: "Card holder name", textfieldValue: .constant(""))
@@ -107,15 +112,27 @@ struct PaymentView: View {
                     }
                     PaymentTextView(title: "Billing Address", placeHolder: "Address", textfieldValue: .constant(""))
                 }
+                HStack{
+                    Image("lock")
+                    Text("Card details will be saved for fututre orders. CVV will not be saved  ")
+                        .font(.custom("Rubik-Regular", fixedSize: 12))
+                        .foregroundColor(.gray)
+                }
                 
             }
-            
-            HStack{
-                Image("lock")
-                Text("Card details will be saved for fututre orders. CVV will not be saved  ")
-                    .font(.custom("Rubik-Regular", fixedSize: 12))
-                    .foregroundColor(.gray)
+            }else{
+                
+                Button(action: {
+                    
+                }, label: {
+                   Image("Paypal")
+                    .resizable()
+                    .frame(width: GetRect().width * 0.5, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .scaledToFill()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                })
             }
+          
           
             Spacer()
             //MARK: PAY BUTTON

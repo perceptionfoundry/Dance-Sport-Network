@@ -15,6 +15,7 @@
 		F22B9B2626E7290A00662DE6 /* MainExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2526E7290A00662DE6 /* MainExploreView.swift */; };
 		F22B9B2826E7393A00662DE6 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2726E7393A00662DE6 /* MainFeedView.swift */; };
 		F22B9B2A26E740F700662DE6 /* MainEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B9B2926E740F700662DE6 /* MainEventView.swift */; };
+		F244152A26F8FEAE00F0D260 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244152926F8FEAE00F0D260 /* CommentView.swift */; };
 		F24DC84E26ED145100C7B72B /* MyEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DC84D26ED145100C7B72B /* MyEventView.swift */; };
 		F24DC85026ED152A00C7B72B /* AddAvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DC84F26ED152A00C7B72B /* AddAvailabilityView.swift */; };
 		F24DC85226ED200A00C7B72B /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DC85126ED200A00C7B72B /* AddEventView.swift */; };
@@ -93,6 +94,7 @@
 		F22B9B2526E7290A00662DE6 /* MainExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainExploreView.swift; sourceTree = "<group>"; };
 		F22B9B2726E7393A00662DE6 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		F22B9B2926E740F700662DE6 /* MainEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEventView.swift; sourceTree = "<group>"; };
+		F244152926F8FEAE00F0D260 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		F24DC84D26ED145100C7B72B /* MyEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventView.swift; sourceTree = "<group>"; };
 		F24DC84F26ED152A00C7B72B /* AddAvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAvailabilityView.swift; sourceTree = "<group>"; };
 		F24DC85126ED200A00C7B72B /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				F2783BA926DCABFF00ABA0A7 /* AuthSideTextFieldView.swift */,
 				F2783BAB26DCAF9300ABA0A7 /* AuthButtonView.swift */,
 				F21ED6EB26E1FB1600AFA3FD /* ShareUserPopView.swift */,
+				F244152926F8FEAE00F0D260 /* CommentView.swift */,
 				F28E3C2226EB3203003CFB99 /* CalendarView.swift */,
 				F24DC84D26ED145100C7B72B /* MyEventView.swift */,
 				F24DC85626ED2A0500C7B72B /* OtherEventView.swift */,
@@ -550,6 +553,7 @@
 				F2783BB926DD5E9F00ABA0A7 /* MainTabView.swift in Sources */,
 				F26EB52D26E7BBC70031760F /* MainPartnerView.swift in Sources */,
 				F24DC84E26ED145100C7B72B /* MyEventView.swift in Sources */,
+				F244152A26F8FEAE00F0D260 /* CommentView.swift in Sources */,
 				F2783BC126DD5F2100ABA0A7 /* ChatTabView.swift in Sources */,
 				F2783B8826DC950700ABA0A7 /* SignUpView.swift in Sources */,
 				F2783BAC26DCAF9300ABA0A7 /* AuthButtonView.swift in Sources */,
