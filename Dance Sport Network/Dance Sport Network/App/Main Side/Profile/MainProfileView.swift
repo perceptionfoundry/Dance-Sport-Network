@@ -139,7 +139,7 @@ struct MainProfileView: View {
                                         Image("image\(index + 1)")
                                             .resizable()
                                             .blur(radius: 4)
-                                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                            .frame(width: GetRect().width * 0.285, height: GetRect().width * 0.285, alignment: .center)
                                             .overlay(
                                                 VStack{
 
@@ -164,13 +164,12 @@ struct MainProfileView: View {
                                     else{
                                     Image("image\(index + 1)")
                                         .resizable()
-                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .frame(width: GetRect().width * 0.285, height: GetRect().width * 0.285, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     }
                                 }
                             }
-                            .padding(.horizontal)
                         }
-                        .frame(maxHeight: 350)
+                        .frame(maxHeight: 500)
             }
 
             if isCalendar{

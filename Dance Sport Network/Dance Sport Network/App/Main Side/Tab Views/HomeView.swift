@@ -333,13 +333,13 @@ struct FeedPostView: View {
                     
                 })
                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                Button(action: {
-                    
-                }, label: {
-                    Image("Bookmark")
-                    
-                })
-                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                Button(action: {
+//                    
+//                }, label: {
+//                    Image("Bookmark")
+//                    
+//                })
+//                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }.padding(.horizontal)
         }
         .padding(.vertical)

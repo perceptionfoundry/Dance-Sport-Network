@@ -48,7 +48,7 @@ struct SearchView: View {
                                 Image("image\(index + 1)")
                                     .resizable()
                                     .blur(radius: 4)
-                                    .frame(width: 120, height: 120, alignment: .center)
+                                    .frame(width: GetRect().width * 0.285, height: GetRect().width * 0.285, alignment: .center)
                                     .overlay(
                                         VStack{
                                             
@@ -74,12 +74,21 @@ struct SearchView: View {
                                 
                             }
                             else{
-                                Image("image\(index + 1)")
-                                    .resizable()
-                                    .frame(width: 120, height: 120, alignment: .center)                                    .onTapGesture {
-                                        showOtherEvent.toggle()
-                                    }
+                                
+                                NavigationLink(
+                                    destination: MainProfileView(),
+                                    isActive: $showOtherEvent,
+                                    label: {
+                                        
+                                        Image("image\(index + 1)")
+                                            .resizable()
+                                            .frame(width: GetRect().width * 0.285, height: GetRect().width * 0.285, alignment: .center)                                    .onTapGesture {
+                                                showOtherEvent.toggle()
+                                            }
+                                    })
+                                    
                             }
+                                
                         }
                     }
                     .padding(.horizontal)
@@ -90,7 +99,7 @@ struct SearchView: View {
                 Spacer()
             }
             
-            OthersEventView(dismiss: $showOtherEvent).opacity(showOtherEvent ? 1 : 0)
+//            OthersEventView(dismiss: $showOtherEvent).opacity(showOtherEvent ? 1 : 0)
             
         }
         .background(
