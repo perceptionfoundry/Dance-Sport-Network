@@ -15,14 +15,14 @@ struct MainExploreView: View {
     @State var isPartner = false
     
     var body: some View {
-        
+        ScrollView{
         VStack {
             
             //MARK: EVENT
             HStack {
                 
                 Text("UPCOMING EVENTS")
-                    .font(.custom("Rubik-SemiBold", size: 16))
+                    .font(.custom("Baron Neue Bold", size: 16))
                     .padding(2)
              
                 Spacer()
@@ -65,7 +65,7 @@ struct MainExploreView: View {
             HStack {
                 
                 Text("EXPLORE MUSIC")
-                    .font(.custom("Rubik-SemiBold", size: 16))
+                    .font(.custom("Baron Neue Bold", size: 16))
                     .padding(2)
              
                 Spacer()
@@ -106,7 +106,7 @@ struct MainExploreView: View {
             HStack {
                 
                 Text("PARTNER SEARCH")
-                    .font(.custom("Rubik-SemiBold", size: 16))
+                    .font(.custom("Baron Neue Bold", size: 16))
                     .padding(2)
              
                 Spacer()
@@ -145,7 +145,7 @@ struct MainExploreView: View {
             
         }
         .padding()
-       
+    }
        
     }
 }

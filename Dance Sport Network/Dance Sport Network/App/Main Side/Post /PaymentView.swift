@@ -12,7 +12,7 @@ struct PaymentView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var isCard = false
-    
+    @State var isCompleted = false
     var body: some View {
         
         VStack {
@@ -136,16 +136,22 @@ struct PaymentView: View {
           
             Spacer()
             //MARK: PAY BUTTON
-            AuthButtonView(title: "PAY $59.00") {
-                
+            
+            NavigationLink(destination: MainTabView(), isActive: $isCompleted) {
+                AuthButtonView(title: "PAY $59.00") {
+                    isCompleted.toggle()
+                }
             }
+            
+           
+            Spacer()
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .background(
          
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

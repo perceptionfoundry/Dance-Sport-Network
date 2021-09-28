@@ -15,6 +15,12 @@ struct MainTabView: View {
     @State var isSearch = false
     @State var isChat = false
     
+    @State var showCard = false
+    @State var dismissCard = false
+    @State var isShare = false
+    @State var isComment = false
+    @State var isEdit = false
+    
     var body: some View {
         
         ZStack{
@@ -27,7 +33,7 @@ struct MainTabView: View {
             case 3:
                 ChatTabView()
             default :
-                HomeView()
+                HomeView(showCard: $showCard, dismissCard: $dismissCard, isShare: $isShare, isComment: $isComment)
             }
             
         
@@ -45,14 +51,21 @@ struct MainTabView: View {
                         selectedIndex =  0
                     }
                     
-                    TabButtonView(iconTitle: "Plus", isSelected: $isPost){
-                        isHome = false
-                        isPost = true
-                        isSearch = false
-                        isChat = false
-                        
-                        selectedIndex =  1
-                    }
+                    
+                    NavigationLink(
+                        destination: NewPostView(),
+                        isActive: $isPost,
+                        label: {
+                            TabButtonView(iconTitle: "Plus", isSelected: $isPost){
+        //                        isHome = false
+                                isPost.toggle()
+        //                        isSearch = false
+        //                        isChat = false
+        //
+        //                        selectedIndex =  1
+                            }
+                        })
+                  
                     
                     TabButtonView(iconTitle: "Search", isSelected: $isSearch){
                         isHome = false
@@ -77,12 +90,182 @@ struct MainTabView: View {
                 .background(RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.white)
                                 .shadow(radius: 5))
-               
                 .overlay(Rectangle()
                             .fill(Color("background"))
                             .frame(width: GetRect().width, height: 40, alignment: .bottom)
                         .offset(y: 50), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
+
+            BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.6)
+            {
+                
+                if isComment == false{
+                    VStack{
+                        
+                        HStack {
+                            Text("SHARE TO USER")
+                                .font(.custom("Baron Neue", size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Button(action: {
+                                showCard.toggle()
+                                dismissCard.toggle()
+                            }, label: {
+                                Image(systemName: "xmark")
+                                    .foregroundColor(.black)
+
+                            })
+                        }
+                        .padding(.bottom)
+                        
+                        VStack {
+                            HStack {
+                                Image(systemName: "person.crop.circle.fill.badge.plus")
+                                    .resizable()
+                                    .foregroundColor(.accentColor)
+                                    .scaledToFill()
+                                    .clipped()
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                Text("Other User")
+                                    .font(.custom("Rubik-Bold", size: 16))
+                                    .foregroundColor(.black)
+                                Spacer()
+                                
+                                Button(action: {
+                                    isShare.toggle()
+                                    showCard.toggle()
+                                    dismissCard.toggle()
+                                    guard let data = URL(string: "https://www.apple.com") else { return }
+                                            let av = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+                                            UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+                                    
+                                }, label: {
+                                    Text("Invite")
+                                        .font(.custom("Rubik-Bold", size: 15))
+                                        .foregroundColor(Color.white)
+                                        .padding()
+                                        .background(Capsule()
+                                                        .frame(width: 80, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+                                })
+                            }
+                            .padding(.horizontal)
+                            
+                            Rectangle()
+                                .fill(Color.gray)
+                                .frame(height: 1)
+                        }
+                      
+                        
+                        ScrollView{
+                            VStack{
+                                
+                                ForEach(0...5, id:\.self){ i in
+                                    ShareUserPopView(){
+                                        showCard = false
+                                        dismissCard = false
+                                        isShare = false
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(height: 40)
+
+                      
+                    }
+                    .padding()
+                }
+                
+                else{
+                    VStack{
+                        HStack {
+                            Text("Comments")
+                                .font(.custom("Baron Neue", size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Button(action: {
+                                showCard.toggle()
+                                dismissCard.toggle()
+                            }, label: {
+                                Image(systemName: "xmark")
+                                    .foregroundColor(.black)
+
+                            })
+                        }
+                        
+                        if isEdit{
+                            HStack{
+                            TextField("Your comment", text: .constant(""))
+                                .padding()
+                                
+                                Button(action: {
+                                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
+                                    isEdit.toggle()
+                                    
+                                }, label: {
+                                    Image(systemName: "paperplane.circle.fill")
+                                        .resizable()
+                                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .foregroundColor(Color.accentColor)
+                                        .padding(.trailing)
+                                })
+                                
+                        }
+                                .background(Capsule()
+                                                .stroke(Color.accentColor,lineWidth: 2))
+                        }
+                        
+                        ScrollView{
+                            
+                            VStack{
+                                ForEach(0...3,id:\.self){ index in
+                                    
+                                    if index == 0{
+                                        CommentView("Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+                                    }
+                                    else{
+                                        CommentView("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+                                    }
+                                   
+                                }
+                            }
+                        }
+                        HStack{
+                            TextField("Your comment", text: .constant(""))
+                                .foregroundColor(.gray)
+                            .padding()
+                            .onTapGesture {
+                                isEdit.toggle()
+                            }
+                            
+                            Button(action: {
+                                
+                            }, label: {
+                                Image(systemName: "paperplane.circle.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.trailing)
+                            })
+                            
+                        }
+                            .background(Capsule()
+                                            .stroke(Color.accentColor,lineWidth: 2))
+                            .opacity(isEdit ? 0 : 1)
+                        
+                       
+                    }
+                    .padding()
+                    
+                }
+            }
+            .opacity(showCard ? 1 : 0)
             
         }
         .navigationBarHidden(true)

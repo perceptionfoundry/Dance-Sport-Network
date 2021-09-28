@@ -10,11 +10,11 @@ import SwiftUI
 struct HomeView: View {
     
     @State var isFeed = true
-    @State var showCard = false
-    @State var dismissCard = false
     @State var isProfile = false
-    @State var isShare = false
-    @State var isComment = false
+    @Binding var showCard : Bool
+    @Binding var dismissCard : Bool
+    @Binding var isShare : Bool
+    @Binding var isComment : Bool
 
    
 
@@ -26,7 +26,8 @@ struct HomeView: View {
                 Spacer()
                 Image("Logo2")
                 Spacer()
-            }.overlay(
+            }
+            .overlay(
                 NavigationLink(
                     destination: MainProfileView(),
                     isActive: $isProfile,
@@ -67,25 +68,41 @@ struct HomeView: View {
                 .padding(.horizontal)
             }
             .padding()
-            .frame(width: GetRect().width * 0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(width: GetRect().width * 0.85, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .background(RoundedRectangle(cornerRadius: 10)
                             .fill(Color.white)
-                            .frame(height: 50))
+                            .frame(height: 50)
+                            .shadow(color: .gray, radius: 1.5, x: 0, y: 0))
+  
+            //HORIZONTAL SCROLL
+
+            ScrollView(.horizontal,showsIndicators:false){
+                LazyHStack{
+                    
+                    ForEach(0...5, id:\.self){ _ in
+                        TrendUserView()
+                    }
+                }
+            }
+            .frame(width: GetRect().width * 0.95, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
-        
+            
+            VStack{
             if isFeed{
                 MainFeedView(showCard: $showCard, dismissCard: $dismissCard, isComment: $isComment)
+
             }else{
                 MainExploreView()
             }
-          
+        }
             
             Spacer()
             
         }
         .padding()
             
-            BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.6) {
+            BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.6)
+            {
                 
                 if isComment == false{
                     VStack{
@@ -109,6 +126,12 @@ struct HomeView: View {
                         
                         VStack {
                             HStack {
+                                Image(systemName: "person.crop.circle.fill.badge.plus")
+                                    .resizable()
+                                    .foregroundColor(.accentColor)
+                                    .scaledToFill()
+                                    .clipped()
+                                    .frame(width: 50, height: 50, alignment: .center)
                                 Text("Other User")
                                     .font(.custom("Rubik-Bold", size: 16))
                                     .foregroundColor(.black)
@@ -131,6 +154,7 @@ struct HomeView: View {
                                                         .frame(width: 80, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
                                 })
                             }
+                            .padding(.horizontal)
                             
                             Rectangle()
                                 .fill(Color.gray)
@@ -154,7 +178,7 @@ struct HomeView: View {
                         
                         Rectangle()
                             .fill(Color.clear)
-                            .frame(height: 80)
+                            .frame(height: 40)
 
                       
                     }
@@ -198,6 +222,9 @@ struct HomeView: View {
                         HStack{
                         TextField("Your comment", text: .constant(""))
                             .padding()
+                            .onTapGesture {
+                                
+                            }
                             
                             Button(action: {
                                 
@@ -210,14 +237,15 @@ struct HomeView: View {
                             })
                             
                     }
-                            .background(Capsule()
-                                            .stroke(Color.accentColor,lineWidth: 2))
+                        .background(Capsule()
+                                        .stroke(Color.accentColor,lineWidth: 2))
                     
                         
                         Rectangle()
                             .fill(Color.clear)
                             .frame(height: 80)
                     }
+                    .ignoresSafeArea(.keyboard, edges: .bottom)
                     .padding()
                     
                 }
@@ -228,7 +256,7 @@ struct HomeView: View {
         .background(
          
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -240,21 +268,25 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(showCard: .constant(true), dismissCard: .constant(true), isShare: .constant(true), isComment: .constant(true))
     }
 }
 
 struct TrendUserView: View {
     var body: some View {
-        ZStack {
-            
-            Circle()
-                .stroke(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.4478341341, green: 0.3238174319, blue: 0.873673141, alpha: 1)), Color(#colorLiteral(red: 0.8520538211, green: 0.4050015807, blue: 0.686578691, alpha: 1))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/),lineWidth: 1.5)
-                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Image("sample")
-                .resizable()
-                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+        VStack {
+            ZStack {
+                
+                Circle()
+                    .stroke(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.4478341341, green: 0.3238174319, blue: 0.873673141, alpha: 1)), Color(#colorLiteral(red: 0.8520538211, green: 0.4050015807, blue: 0.686578691, alpha: 1))]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/),lineWidth: 1.5)
+                    .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Image("sample")
+                    .resizable()
+                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            }
+            Text("User Name")
+                .font(.custom("Rubix-Regular", size: 12))
         }
     }
 }

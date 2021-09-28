@@ -8,16 +8,27 @@
 import SwiftUI
 
 struct NewPostView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var isExpanding = false
     @State var isPromote = false
     @State var isPay = false
     
     var body: some View {
         
+        
         VStack(spacing: 30) {
             HStack {
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .frame(width: 30, height: 30, alignment: .center)
+                }
+
+                
                 Spacer()
-                Text("CREATE A NEW POST")
+                Text("CREATE A POST")
                     .font(.custom("Rubik-Bold", size: 18))
                 Spacer()
                 Image("sample")
@@ -34,9 +45,11 @@ struct NewPostView: View {
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(Color.accentColor
                                     ,style: StrokeStyle(lineWidth: 2, dash: [7, 12], dashPhase: 0.4))
-                            .frame(width: GetRect().width * 0.9, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: GetRect().width * 0.9, height: 124, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         Image("upload")
                             .resizable()
+                        
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                             .frame(width: GetRect().width * 0.9, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
                     .padding(.bottom)
@@ -127,14 +140,15 @@ struct NewPostView: View {
                                 },
                                 label: {
                                     Text("Choose country")
-                                        .padding()
                                         .frame(height: 45)
                                    
                                     
                                 }
                             )
-                            .background(Rectangle().fill(Color.white))
-                            .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.leading)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                            .fill(Color.white))
                             
                             //MARK: PROMOTE BUTTON
                             
@@ -162,34 +176,33 @@ struct NewPostView: View {
                     
                     Group{
                         //MARK: POST BUTTON
-                        NavigationLink(
-                            destination: PaymentView(),
-                            isActive: $isPay,
-                            label: {
-                                AuthButtonView(title: "Post") {
-                                    isPay.toggle()
+                         AuthButtonView(title: "Post") {
+                                    presentationMode.wrappedValue.dismiss()
                                 }
                                 .padding(.top, 40)
-                            })
+
                         
                     }
                 }
+                .padding(.horizontal)
             }
+         
             
             
             Spacer()
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .padding()
         .background(
-         
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
            
             )
-       
+    
     }
 }
 

@@ -11,8 +11,11 @@ struct PromoteView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var isSegue = false
+    @State var showCard = false
+    @State var dismissCard = false
+    
     var body: some View {
-        
+        ZStack{
         VStack {
             HStack {
                 
@@ -24,8 +27,9 @@ struct PromoteView: View {
                 })
                 .padding(15)
                 Spacer()
-                Text("PROMOTE YOUR POST")
-                    .font(Font.custom("Baron Neue Bold", size: 18))
+                Text("Promote Your Post")
+                    .font(Font.custom("Rubik-Bold", size: 18))
+                    .autocapitalization(.words)
                     .padding(.horizontal)
                 Spacer()
             }
@@ -35,7 +39,7 @@ struct PromoteView: View {
                 Text("Choose your Payment Plan")
                     .font(Font.custom("Rubik-Bold", size: 18, relativeTo: .title2))
                 
-                Text("Your post will appear twice per day with any payment option you choose. You can cancel anytime.")
+                Text("Your post will appear multiples times per day with any payment option you choose. You can cancel anytime.")
                     .font(Font.custom("Rubik-Regular", size: 14, relativeTo: .title2))
                     .foregroundColor(.gray)
             }
@@ -45,7 +49,8 @@ struct PromoteView: View {
                 //MARK:DAILY
                 
                 Button(action: {
-                    
+                    showCard.toggle()
+                    dismissCard.toggle()
                 }, label: {
                     ZStack{
                         
@@ -79,7 +84,8 @@ struct PromoteView: View {
                 //MARK:MONTHLY
                
                 Button(action: {
-                    
+                    showCard.toggle()
+                    dismissCard.toggle()
                 }, label: {
                     ZStack{
                         
@@ -97,7 +103,7 @@ struct PromoteView: View {
                                 .foregroundColor(.accentColor)
                                 .padding(.top)
                             
-                            Text("Per month")
+                            Text("Per day")
                                 .font(Font.custom("Rubik-Regular", size: 14))
                                 .foregroundColor(.gray)
                         }
@@ -120,14 +126,38 @@ struct PromoteView: View {
                         isSegue.toggle()
                     }
                 })
-          
+            Spacer()
         }
+        
+            BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.7) {
+                
+                VStack {
+                    Button {
+                        showCard.toggle()
+                        dismissCard.toggle()
+                    } label: {
+                        HStack {
+                            Image(systemName: "xmark")
+                                .frame(width: 30, height: 30, alignment: .center)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    CalendarView(selectedDate: .constant(Date()))
+                        .padding()
+                }
+            }
+            .opacity(showCard ? 1 : 0)
+            
+    }
+        
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .background(
          
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

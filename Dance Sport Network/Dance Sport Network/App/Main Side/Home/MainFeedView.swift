@@ -49,17 +49,7 @@ struct MainFeedView: View {
                 Spacer()
             }
             
-            //HORIZONTAL SCROLL
-            ScrollView(.horizontal,showsIndicators:false){
-                LazyHStack{
-                    
-                    ForEach(0...5, id:\.self){ _ in
-                        TrendUserView()
-                    }
-                }
-            }
-            .frame(width: GetRect().width * 0.95, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
+
             
             ScrollView(showsIndicators:false){
                 LazyVStack{
