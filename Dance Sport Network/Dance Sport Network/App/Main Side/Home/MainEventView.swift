@@ -7,12 +7,18 @@
 
 import SwiftUI
 import ACarousel
+import StarRateView
 
 struct MainEventView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var currentIndex = 1
     @State var xValue :CGFloat = 0
+    @State var showCard = false
+    @State var dismissCard = false
+    @State var rate: Double = 0
+    @State private var offset = CGSize.zero
+    
     var body: some View {
         VStack{
             HStack {
@@ -27,15 +33,16 @@ struct MainEventView: View {
                         
                 })
                 Spacer()
-                Spacer()
+               
                 Text("EVENTS")
-                    .font(.custom("Rubik-SemiBold", size: 18))
+                    .font(.custom("Rubik-Medium", size: 16))
                 Spacer()
                 Image("sample")
                     .resizable()
                     .clipShape(Circle())
                     .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
+            ZStack{
         ScrollView(showsIndicators: false){
         VStack {
            
@@ -53,29 +60,48 @@ struct MainEventView: View {
             .padding(.bottom)
             
             HStack {
-                Text("Visit")
-                    .font(.footnote)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 30)
-                    .padding(.vertical, 10)
-                    .background(Capsule()
-                                .foregroundColor(.accentColor))
+                Button {
+                    if let url = URL(string: "https://www.google.com") {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
+                    Text("Visit")
+                        .font(.custom("Rubik-Regular", size: 10))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 10)
+                        .background(Capsule()
+                                    .foregroundColor(.accentColor))
+                }
+
+                Button {
+                    
+                } label: {
+                    Text("Add to Calendar")
+                        .font(.custom("Rubik-Regular", size: 10))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 10)
+                        .background(Capsule()
+                                    .foregroundColor(.accentColor))
+                }
+
                 
-                Text("Add to Calendar")
-                    .font(.footnote)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 30)
-                    .padding(.vertical, 10)
-                    .background(Capsule()
-                                .foregroundColor(.accentColor))
+                Button {
+                    showCard.toggle()
+                    dismissCard.toggle()
+                } label: {
+                    Text("Review")
+                        .font(.custom("Rubik-Regular", size: 10))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 10)
+                        .background(Capsule()
+                                    .foregroundColor(.accentColor))
+                }
+
                 
-                Text("Review")
-                    .font(.footnote)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 30)
-                    .padding(.vertical, 10)
-                    .background(Capsule()
-                                .foregroundColor(.accentColor))
+               
             }
             
             Rectangle()
@@ -89,7 +115,7 @@ struct MainEventView: View {
                 .padding(.bottom, 5)
             
             Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
-                .foregroundColor(.black)
+                    .foregroundColor(.gray .opacity(0.8))
                 .font(.custom("Rubik-Regular", size: 14))
         }
             .padding(.bottom)
@@ -121,12 +147,71 @@ struct MainEventView: View {
             Spacer()
         }
         }
+            
+                BottomCardView(shown: $showCard, Dismissal: $dismissCard, height: GetRect().height * 0.7) {
+                    
+                    VStack{
+                        HStack(alignment:.top) {
+                            Image("Cha Cha")
+                                .resizable()
+                                .frame(width: 40, height: 40, alignment: .center)
+                                .scaledToFill()
+                            .clipShape(Circle())
+                            
+                            Text("User Name")
+                                .font(.custom("Rubik-SemiBold", size: 12))
+                            
+                            Spacer()
+                        }
+                        
+                        StarRateView(starCount: 5, rate: self.rate)
+                                  .starSize(20)
+                                  .starPadding(4.0)
+                                  .forgroundStarColor(.yellow)
+                                  .backgroundStarColor(.gray)
+                                  .gesture(
+                                      DragGesture()
+                                          .onChanged { gesture in
+                                              self.offset = gesture.translation
+                                              self.rate = (Double(self.offset.width) * (5 / 100))
+                                                  .round(nearest: 0.5)
+                                              print(self.rate)
+                                          }
+
+                                          .onEnded { _ in
+                                              if abs(self.offset.width) > 100 {
+                                                  // remove the card
+                                              } else {
+                                                  self.offset = .zero
+                                              }
+                                          }
+                                  )
+                          
+                        TextView(text: .constant(""), didStartEditing: .constant(false), height: .constant(10), isReturn: .constant(false), placeHolder: "Write about you...")
+                            .frame(height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10)
+                                            .fill(Color.white))
+                            .background(RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.accentColor))
+                      
+                            AuthButtonView(title: "Submit") {
+                                showCard.toggle()
+                                dismissCard.toggle()
+                            }
+                        
+
+                    }
+                    .padding()
+                    .frame(width: GetRect().width * 0.8)
+                }
+            }
     }
         .padding(.horizontal)
         .background(
          
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -223,5 +308,19 @@ struct ReviewView: View {
         .background(Color.white)
         .frame(width:GetRect().width * 0.8, height: 180)
         .cornerRadius(15)
+    }
+}
+
+
+extension Double {
+    func round(nearest: Double) -> Double {
+        let n = 1/nearest
+        let numberToRound = self * n
+        return numberToRound.rounded() / n
+    }
+
+    func floor(nearest: Double) -> Double {
+        let intDiv = Double(Int(self / nearest))
+        return intDiv * nearest
     }
 }

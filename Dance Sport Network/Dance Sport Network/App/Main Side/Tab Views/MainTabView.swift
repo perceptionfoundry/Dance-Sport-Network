@@ -57,25 +57,20 @@ struct MainTabView: View {
                         isActive: $isPost,
                         label: {
                             TabButtonView(iconTitle: "Plus", isSelected: $isPost){
-        //                        isHome = false
                                 isPost.toggle()
-        //                        isSearch = false
-        //                        isChat = false
-        //
-        //                        selectedIndex =  1
                             }
                         })
-                  
                     
+                NavigationLink(
+                destination: SearchView(),
+                isActive: $isSearch,
+                label: {
                     TabButtonView(iconTitle: "Search", isSelected: $isSearch){
-                        isHome = false
-                        isPost = false
-                        isSearch = true
-                        isChat = false
-                        
-                        selectedIndex =  2
+                     
+                        isSearch.toggle()
+                      
                     }
-                    
+                })
                     TabButtonView(iconTitle: "Chat", isSelected: $isChat){
                         isHome = false
                         isPost = false
@@ -91,7 +86,7 @@ struct MainTabView: View {
                                 .fill(Color.white)
                                 .shadow(radius: 5))
                 .overlay(Rectangle()
-                            .fill(Color("background"))
+                            .fill(Color("background_light"))
                             .frame(width: GetRect().width, height: 40, alignment: .bottom)
                         .offset(y: 50), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }

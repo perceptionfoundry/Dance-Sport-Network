@@ -22,6 +22,7 @@
 		F24DC85526ED27B300C7B72B /* OthersEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DC85426ED27B300C7B72B /* OthersEventView.swift */; };
 		F24DC85726ED2A0500C7B72B /* OtherEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DC85626ED2A0500C7B72B /* OtherEventView.swift */; };
 		F2595B2F26E9CFDC0031E1AA /* MainMusicStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2595B2E26E9CFDC0031E1AA /* MainMusicStyleView.swift */; };
+		F26C057C2708D0A100F3811E /* StarRateView in Frameworks */ = {isa = PBXBuildFile; productRef = F26C057B2708D0A100F3811E /* StarRateView */; };
 		F26EB52D26E7BBC70031760F /* MainPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52C26E7BBC70031760F /* MainPartnerView.swift */; };
 		F26EB53026E7D4B50031760F /* MainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26EB52F26E7D4B50031760F /* MainProfileView.swift */; };
 		F2783B5A26DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2783B5926DC8B5100ABA0A7 /* Dance_Sport_NetworkApp.swift */; };
@@ -158,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26C057C2708D0A100F3811E /* StarRateView in Frameworks */,
 				F225807B26E9D846001FC591 /* ACarousel in Frameworks */,
 				F28E3C2126EB2FBE003CFB99 /* FSCalendar in Frameworks */,
 			);
@@ -405,6 +407,7 @@
 			packageProductDependencies = (
 				F225807A26E9D846001FC591 /* ACarousel */,
 				F28E3C2026EB2FBE003CFB99 /* FSCalendar */,
+				F26C057B2708D0A100F3811E /* StarRateView */,
 			);
 			productName = "Dance Sport Network";
 			productReference = F2783B5626DC8B5100ABA0A7 /* Dance Sport Network.app */;
@@ -480,6 +483,7 @@
 			packageReferences = (
 				F225807926E9D846001FC591 /* XCRemoteSwiftPackageReference "ACarousel" */,
 				F28E3C1F26EB2FBE003CFB99 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				F26C057A2708D0A100F3811E /* XCRemoteSwiftPackageReference "StarRateView" */,
 			);
 			productRefGroup = F2783B5726DC8B5100ABA0A7 /* Products */;
 			projectDirPath = "";
@@ -906,6 +910,14 @@
 				minimumVersion = 0.2.0;
 			};
 		};
+		F26C057A2708D0A100F3811E /* XCRemoteSwiftPackageReference "StarRateView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/giiiita/StarRateView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F28E3C1F26EB2FBE003CFB99 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -921,6 +933,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F225807926E9D846001FC591 /* XCRemoteSwiftPackageReference "ACarousel" */;
 			productName = ACarousel;
+		};
+		F26C057B2708D0A100F3811E /* StarRateView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F26C057A2708D0A100F3811E /* XCRemoteSwiftPackageReference "StarRateView" */;
+			productName = StarRateView;
 		};
 		F28E3C2026EB2FBE003CFB99 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;

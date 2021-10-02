@@ -18,7 +18,7 @@ struct MainPartnerView: View {
                      cardInfo(id: "4", name: "Shahryaar", place: "Multan", image: "explore_sample4"),]
     var body: some View {
         
-        VStack(spacing: 40){
+        VStack(spacing: 10){
             
             //MARK: TOP
             HStack {
@@ -114,7 +114,7 @@ struct MainPartnerView: View {
         .background(
          
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -149,15 +149,19 @@ struct PartnerCardView: View {
                     .frame(width: GetRect().width * 0.9, height: GetRect().width * 0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .clipped()
                     .cornerRadius(30)
-                
+                VStack{
                 Text(title)
                     .font(.custom("Rubik-SemiBold", size: 20))
+                  
                 Text(place)
                     .font(.custom("Rubik-Regular", size: 16))
                     .foregroundColor(.gray)
+            }
+                .padding(.trailing, 150)
+                    .background(Color("background_light"))
                 
             }
-            .background(Color("background"))
+           
             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y:0)
             .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)

@@ -14,6 +14,11 @@ struct MainExploreView: View {
     @State var isExplore = false
     @State var isPartner = false
     
+    @State var moreVisit = false
+    @State var selectExplore = false
+    @State var selectPartner = false
+    
+    
     var body: some View {
         ScrollView{
         VStack {
@@ -48,13 +53,25 @@ struct MainExploreView: View {
                
 
             }
-            
+            // MARK: EVENT
             ScrollView(.horizontal){
-                LazyHStack{
-                    ExploreCardView(title: "Victoria Dance Week 2021", image: "explore_sample1", buttonTitle: "View More")
-                    
-                    ExploreCardView(title: "Chelsa Spirit Concert", image: "explore_sample2", buttonTitle: "View More")
-                }
+                
+                NavigationLink(
+                    destination: MainEventView(),
+                    isActive: $moreVisit,
+                    label: {
+                        
+                        LazyHStack{
+                            ExploreCardView(title: "Victoria Dance Week 2021", image: "explore_sample1", buttonTitle: "View More"){
+                                moreVisit.toggle()
+                            }
+                            
+                            ExploreCardView(title: "Chelsa Spirit Concert", image: "explore_sample2", buttonTitle: "View More"){
+                                moreVisit.toggle()
+                            }
+                        }
+                    })
+               
                 
             }
             .frame(height: 130)
@@ -93,16 +110,23 @@ struct MainExploreView: View {
             }
             
             ScrollView(.horizontal){
-                LazyHStack{
-                    ExploreCardView(title: "Latin", image: "explore_sample3", buttonTitle: "Select")
-                    
-                    ExploreCardView(title: "Ballroom", image: "explore_sample4", buttonTitle: "Select")
-                }
+                NavigationLink(destination: MainMusicDanceView(imageName: .constant(latinValue)), isActive: $selectExplore, label: {
+                    LazyHStack{
+                        ExploreCardView(title: "Latin", image: "explore_sample3", buttonTitle: "Select"){
+                            selectExplore.toggle()
+                        }
+                        
+                        ExploreCardView(title: "Ballroom", image: "explore_sample4", buttonTitle: "Select"){
+                            selectExplore.toggle()
+                        }
+                    }
+                })
+                
                 
             }
             .frame(height: 130)
             
-            //MARK: SEARCH
+            //MARK: PARTNER
             HStack {
                 
                 Text("PARTNER SEARCH")
@@ -134,11 +158,18 @@ struct MainExploreView: View {
             }
             
             ScrollView(.horizontal){
-                LazyHStack{
-                    ExploreCardView(title: "Rhythm", image: "explore_sample5", buttonTitle: "Select")
-                    
-                    ExploreCardView(title: "Smooth", image: "explore_sample6", buttonTitle: "Select")
-                }
+                NavigationLink(destination: MainPartnerView(), isActive: $selectPartner, label: {
+                    LazyHStack{
+                        ExploreCardView(title: "Rhythm", image: "explore_sample5", buttonTitle: "Select"){
+                            selectPartner.toggle()
+                        }
+                        
+                        ExploreCardView(title: "Smooth", image: "explore_sample6", buttonTitle: "Select"){
+                            selectPartner.toggle()
+                        }
+                    }
+                })
+                
                
             }
             .frame(height: 130)
@@ -162,6 +193,7 @@ struct ExploreCardView: View {
     var title : String
     var image : String
     var buttonTitle : String
+    var buttonAction : ()->()
     
     var body: some View {
         VStack {
@@ -190,7 +222,7 @@ struct ExploreCardView: View {
                             .font(.custom("Ruibik-SemiBold", size: 14))
                         Spacer()
                         Button(action: {
-                            
+                            buttonAction()
                         }, label: {
                             Text(buttonTitle)
                                 .foregroundColor(.accentColor)
