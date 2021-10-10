@@ -153,7 +153,7 @@ struct ChatCellView: View {
                             
                             Text(data.msg)
                                 .foregroundColor(.black)
-                                .font(.custom("Rubik-Regular", size: 12))
+                                .font(.custom("Rubik-Regular", size: 14))
                         }
                         .padding()
                         
@@ -184,7 +184,7 @@ struct ChatCellView: View {
                          
                             Text(data.msg)
                                 .foregroundColor(.white)
-                                .font(.custom("Rubik-Regular", size: 12))
+                                .font(.custom("Rubik-Regular", size: 14))
                         }
                         .padding()
                         .background(msgTail(myMsg: data.myMsg)

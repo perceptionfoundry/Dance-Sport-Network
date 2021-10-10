@@ -42,15 +42,24 @@ struct MainFeedView: View {
                         .offset(y: -10)
                 })
             }
-            
             HStack {
                 Text("TRENDING")
-                    .font(.custom("Rubik_Bold", size: 16))
+                    .font(.custom("Rubik-SemiBold", size: 16))
                 Spacer()
             }
+            .padding(.horizontal)
             
+            //HORIZONTAL SCROLL
 
-            
+            ScrollView(.horizontal,showsIndicators:false){
+                LazyHStack{
+                    
+                    ForEach(0...5, id:\.self){ _ in
+                        TrendUserView()
+                    }
+                }
+            }
+            .frame(height: 90)
             ScrollView(showsIndicators:false){
                 LazyVStack{
                     ForEach(0...8, id:\.self){ _ in
@@ -62,6 +71,9 @@ struct MainFeedView: View {
                             dismissCard.toggle()
                             isComment.toggle()
                         }
+                        .padding()
+        
+                        
                     }
                 }
             }

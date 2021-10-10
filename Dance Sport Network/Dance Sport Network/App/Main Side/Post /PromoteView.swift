@@ -43,7 +43,7 @@ struct PromoteView: View {
                     .font(Font.custom("Rubik-Regular", size: 14, relativeTo: .title2))
                     .foregroundColor(.gray)
             }
-            .padding(.vertical)
+            .padding()
             
             HStack(spacing: 20){
                 //MARK:DAILY

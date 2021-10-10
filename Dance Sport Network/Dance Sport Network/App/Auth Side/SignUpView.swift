@@ -31,7 +31,7 @@ struct SignUpView: View {
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
                     .fill(Color.white)
-                    .shadow(color: .accentColor, radius: 3, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                    .shadow(color: .accentColor.opacity(0.6), radius: 3, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     
                 
                 VStack{
@@ -85,7 +85,7 @@ struct SignUpView: View {
         .background(
          
             VStack {
-                Color("background")
+                Color("background_light")
                     .frame(width: GetRect().width, height: GetRect().height + 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

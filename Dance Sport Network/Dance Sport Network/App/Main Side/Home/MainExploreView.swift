@@ -20,6 +20,18 @@ struct MainExploreView: View {
     
     
     var body: some View {
+        //HORIZONTAL SCROLL
+
+        ScrollView(.horizontal,showsIndicators:false){
+            LazyHStack{
+                
+                ForEach(0...5, id:\.self){ _ in
+                    TrendUserView()
+                }
+            }
+        }
+        .frame(height: 90)
+        
         ScrollView{
         VStack {
             

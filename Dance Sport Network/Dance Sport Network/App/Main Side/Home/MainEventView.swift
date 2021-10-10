@@ -66,7 +66,7 @@ struct MainEventView: View {
                     }
                 } label: {
                     Text("Visit")
-                        .font(.custom("Rubik-Regular", size: 10))
+                        .font(.custom("Rubik-Regular", size: 12))
                         .foregroundColor(.white)
                         .padding(.horizontal, 30)
                         .padding(.vertical, 10)
@@ -78,7 +78,7 @@ struct MainEventView: View {
                     
                 } label: {
                     Text("Add to Calendar")
-                        .font(.custom("Rubik-Regular", size: 10))
+                        .font(.custom("Rubik-Regular", size: 12))
                         .foregroundColor(.white)
                         .padding(.horizontal, 30)
                         .padding(.vertical, 10)
@@ -92,12 +92,13 @@ struct MainEventView: View {
                     dismissCard.toggle()
                 } label: {
                     Text("Review")
-                        .font(.custom("Rubik-Regular", size: 10))
+                        .font(.custom("Rubik-Regular", size: 12))
                         .foregroundColor(.white)
                         .padding(.horizontal, 30)
                         .padding(.vertical, 10)
                         .background(Capsule()
-                                    .foregroundColor(.accentColor))
+                                    .foregroundColor(.accentColor)
+                                        )
                 }
 
                 
@@ -134,13 +135,17 @@ struct MainEventView: View {
                 }
                
                 ScrollView(.horizontal){
-                    LazyHStack{
+                    LazyHStack(spacing:15){
                         
                         ForEach(0...6, id:\.self){ _ in
                             ReviewView()
+                              
                         }
+                        
                     }
+                    .padding(.horizontal)
                 }
+            
                 
                
         }
@@ -259,6 +264,7 @@ struct EventImageView: View {
 
 struct ReviewView: View {
     var body: some View {
+       VStack {
         VStack(){
             
             HStack {
@@ -304,10 +310,16 @@ struct ReviewView: View {
                 .frame(height: 40)
             
         }
-        .padding()
+        .padding(.horizontal)
         .background(Color.white)
         .frame(width:GetRect().width * 0.8, height: 180)
-        .cornerRadius(15)
+    }
+       
+        .background(RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.gray).opacity(0.4))
+        
+        
+        
     }
 }
 

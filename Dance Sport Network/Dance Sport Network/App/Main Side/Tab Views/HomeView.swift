@@ -56,13 +56,24 @@ struct HomeView: View {
                     isFeed.toggle()
                 }, label: {
                     HStack{
-                        Text("  Media Feed")
-                            .font(.custom("Rubik-Bold", size: 14))
+                        
+                        HStack {
+                            Spacer()
+                            Text("Media Feed")
+                                .font(.custom("Rubik-Bold", size: 14))
                             .foregroundColor(isFeed ? .white : .accentColor)
+                            Spacer()
+                        }
+                            
                         Spacer()
-                        Text("Explore        ")
-                            .font(.custom("Rubik-Bold", size: 14))
+                        HStack {
+                            Spacer()
+                            Text("      Explore")
+                                .font(.custom("Rubik-Bold", size: 14))
                             .foregroundColor(!isFeed ? .white : .accentColor)
+                            Spacer()
+                        }
+                        Spacer()
                     }
                 })
                 .padding(.horizontal)
@@ -74,16 +85,7 @@ struct HomeView: View {
                             .frame(height: 50)
                             .shadow(color: .gray, radius: 1.5, x: 0, y: 0))
   
-            //HORIZONTAL SCROLL
-
-            ScrollView(.horizontal,showsIndicators:false){
-                LazyHStack{
-                    
-                    ForEach(0...5, id:\.self){ _ in
-                        TrendUserView()
-                    }
-                }
-            }
+          
             .frame(width: GetRect().width * 0.95, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             
@@ -329,7 +331,7 @@ struct FeedPostView: View {
             Image("post_sample")
                 .resizable()
                 .scaledToFill()
-                .frame(width: GetRect().width * 0.9, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: GetRect().width * 0.7, height: 180, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 
             
@@ -365,18 +367,15 @@ struct FeedPostView: View {
                     
                 })
                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                Button(action: {
-//                    
-//                }, label: {
-//                    Image("Bookmark")
-//                    
-//                })
-//                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+
             }.padding(.horizontal)
         }
+       
+        
         .padding(.vertical)
         .background(RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white))
+                        .fill(Color.white)
+                        .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 0))
     }
 }
 
